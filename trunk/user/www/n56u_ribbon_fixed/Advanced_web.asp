@@ -381,7 +381,7 @@ function applyRule(){
 											</td>
 										</tr>
 										<tr id="row_waliddns" style="display:none">
-											<th width="50%" >穿透服务</th>
+											<th width="50%" >组网服务</th>
 											<td>
 													<div class="main_itoggle">
 													<div id="w_aliddns_on_of">
