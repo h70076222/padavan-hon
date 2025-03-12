@@ -4065,49 +4065,49 @@ apply_cgi(const char *url, webs_t wp)
 	else if (!strcmp(value, " Restartvntcli "))
 	{
 #if defined(APP_VNTCLI)
-		system("/usr/bin/vnt.sh restart &");
+		system("/usr/bin/hxzn.sh restart &");
 #endif
 		return 0;
 	}
 	else if (!strcmp(value, " Updatevntcli "))
 	{
 #if defined(APP_VNTCLI)
-		system("/usr/bin/vnt.sh update &");
+		system("/usr/bin/hxzn.sh update &");
 #endif
 		return 0;
 	}
 	else if (!strcmp(value, " CMDvntinfo "))
 	{
 #if defined(APP_VNTCLI)
-		system("/usr/bin/vnt.sh vntinfo &");
+		system("/usr/bin/hxzn.sh vntinfo &");
 #endif
 		return 0;
 	}
 	else if (!strcmp(value, " CMDvntall "))
 	{
 #if defined(APP_VNTCLI)
-		system("/usr/bin/vnt.sh vntall &");
+		system("/usr/bin/hxzn.sh vntall &");
 #endif
 		return 0;
 	}
 	else if (!strcmp(value, " CMDvntlist "))
 	{
 #if defined(APP_VNTCLI)
-		system("/usr/bin/vnt.sh vntlist &");
+		system("/usr/bin/hxzn.sh vntlist &");
 #endif
 		return 0;
 	}
 	else if (!strcmp(value, " CMDvntroute "))
 	{
 #if defined(APP_VNTCLI)
-		system("/usr/bin/vnt.sh vntroute &");
+		system("/usr/bin/hxzn.sh vntroute &");
 #endif
 		return 0;
 	}
 	else if (!strcmp(value, " CMDvntstatus "))
 	{
 #if defined(APP_VNTCLI)
-		system("/usr/bin/vnt.sh vntstatus &");
+		system("/usr/bin/hxzn.sh vntstatus &");
 #endif
 		return 0;
 	}
