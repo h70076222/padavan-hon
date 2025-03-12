@@ -454,350 +454,81 @@ function button_vntcli_status() {
 	</ul>
 	</div>
 	<div class="row-fluid">
-	<div id="tabMenu" class="submenuBlock"></div>
-	<div id="wnd_vntcli_cfg">
-	<div class="alert alert-info" style="margin: 10px;">
-	vnt是一个简便高效的异地组网、内网穿透工具。&nbsp;&nbsp;&nbsp;&nbsp;安卓、Windows客户端：<a href="https://github.com/vnt-dev/VntApp" target="blank">VntApp</a><br>
-	<div>项目地址：<a href="https://github.com/vnt-dev/vnt" target="blank">github.com/vnt-dev/vnt</a>&nbsp;&nbsp;&nbsp;&nbsp;官网：<a href="https://rustvnt.com" target="blank">rustvnt.com</a>&nbsp;&nbsp;&nbsp;&nbsp;QQ群1：<a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=9aa1l03sqBPU-rMIzJ52gcmjq9HsO0tA&authKey=FFA0UdK6Dg1wAvL4e9FvyEu3DxekIlYp9W4NaQ54DO2dzQM%2BKS3rShUSwt9BN0bL&noverify=0&group_code=1034868233" target="blank">1034868233</a>&nbsp;&nbsp;&nbsp;&nbsp;QQ群2：<a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=H4czBrp-IUxgTJ9wem0eXFHPdADkKTVW&authKey=JXU4v4ZQSXupcHOYUCOVgU0rDUdEe1ZfGVWzRVqRecxXY4cg%2BgfHl7n%2F%2F6nGSDH2&noverify=0&group_code=950473757" target="blank">950473757</a></div>
-	<br><div>当前版本:【<span style="color: #FFFF00;"><% nvram_get_x("", "vntcli_ver"); %></span>】&nbsp;&nbsp;最新版本:【<span style="color: #FD0187;"><% nvram_get_x("", "vntcli_ver_n"); %></span>】 </div>
-	</div>
-	<table width="100%" cellpadding="4" cellspacing="0" class="table">
-	<tr>
-	<th colspan="4" style="background-color: #756c78;">开关</th>
-	</tr>
-	<tr>
-	<th><#running_status#>
-	</th>
-	<td id="vntcli_status"></td><td></td>
-	</tr>
-	<tr>
-	<th width="30%" style="border-top: 0 none;">启用vnt-cli</th>
-	<td style="border-top: 0 none;">
-	<select name="vntcli_enable" class="input" onChange="change_vntcli_enable();" style="width: 185px;">
-	<option value="0" <% nvram_match_x("","vntcli_enable", "0","selected"); %>>【关闭】</option>
-	<option value="1" <% nvram_match_x("","vntcli_enable", "1","selected"); %>>【开启】</option>
-	<option value="2" <% nvram_match_x("","vntcli_enable", "2","selected"); %>>【开启】配置文件</option>
-	</select>
-	</td>
-	<td colspan="4" style="border-top: 0 none;">
-	<input class="btn btn-success" style="width:150px" type="button" name="restartvntcli" value="更新" onclick="button_restartvntcli()" />
-	</td>
-	</tr>
-	<tr>
-	<th colspan="4" style="background-color: #756c78;">基础设置</th>
-	</tr>
-	<tr id="vntcli_file_tr">
-	<td colspan="4" style="border-top: 0 none;">
-	<i class="icon-hand-right"></i> <a href="javascript:spoiler_toggle('scripts.vnt')"><span>点此修改 /etc/storage/vnt.conf 配置文件</span></a>&nbsp;&nbsp;&nbsp;&nbsp;配置文件模板：<a href="https://github.com/vnt-dev/vnt/blob/main/vnt-cli/README.md#-f-conf" target="blank">点此查看</a>
-	<div id="scripts.vnt">
-	<textarea rows="18" wrap="off" spellcheck="false" maxlength="2097152" class="span12" name="scripts.vnt.conf" style="font-family:'Courier New'; font-size:12px;"><% nvram_dump("scripts.vnt.conf",""); %></textarea>
-	</div>
-	</td>
-	</tr>
-	<tr id="vntcli_token_tr">
-	<th width="30%" style="border-top: 0 none;">Token</th>
-	<td style="border-top: 0 none;">
-	<input type="password" maxlength="63" class="input" size="15" id="vntcli_token" name="vntcli_token" style="width: 175px;" value="<% nvram_get_x("","vntcli_token"); %>" onKeyPress="return is_string(this,event);" />
-	<button style="margin-left: -5px;" class="btn" type="button" onclick="passwordShowHide('vntcli_token')"><i class="icon-eye-close"></i></button>&nbsp;<span style="color:#888;">必填项</span>
-	</td>
-	</tr><tr id="vntcli_token_td"><td colspan="3"></td></tr>
-	<tr id="vntcli_ip_tr">
-	<th width="30%" style="border-top: 0 none;">接口IP</th>
-	<td style="border-top: 0 none;">
-	<input type="text" maxlength="128" class="input" size="15" placeholder="10.26.0.2" id="vntcli_ip" name="vntcli_ip" value="<% nvram_get_x("","vntcli_ip"); %>" onKeyPress="return is_string(this,event);" />
-	</td>
-	</tr><tr id="vntcli_ip_td"><td colspan="3"></td></tr>
-	<tr id="vntcli_localadd_tr">
-	<th width="30%" style="border-top: 0 none;">本地网段</th>
-	<td style="border-top: 0 none;">
-	<textarea maxlength="256" class="input" name="vntcli_localadd" id="vntcli_localadd" placeholder="192.168.2.0/24" style="width: 210px; height: 20px; resize: both; overflow: auto;"><% nvram_get_x("","vntcli_localadd"); %></textarea>
-	<br>&nbsp;<span style="color:#888;">多个网段使用换行分隔</span>
-	</td>
-	</tr><tr id="vntcli_localadd_td"><td colspan="3"></td></tr>
-	<tr id="vntcli_serip_tr">
-	<th width="30%" style="border-top: 0 none;">服务器地址</th>
-	<td style="border-top: 0 none;">
-	<input type="text" maxlength="128" class="input" size="15" placeholder="tcp://vnt.wherewego.top:29872" id="vntcli_serip" name="vntcli_serip" value="<% nvram_get_x("","vntcli_serip"); %>" onKeyPress="return is_string(this,event);" />
-	</td>
-	</tr><tr id="vntcli_serip_td"><td colspan="3"></td></tr>
-	<tr id="vntcli_model_tr">
-	<th width="30%" style="border-top: 0 none;">加密方式</th>
-	<td style="border-top: 0 none;">
-	<select name="vntcli_model" class="input" onChange="change_vntcli_model();" style="width: 185px;">
-	<option value="0" <% nvram_match_x("","vntcli_model", "0","selected"); %>>不加密</option>
-	<option value="1" <% nvram_match_x("","vntcli_model", "1","selected"); %>>xor</option>
-	<option value="2" <% nvram_match_x("","vntcli_model", "2","selected"); %>>aes_ecb</option>
-	<option value="3" <% nvram_match_x("","vntcli_model", "3","selected"); %>>chacha20</option>
-	<option value="4" <% nvram_match_x("","vntcli_model", "4","selected"); %>>chacha20_poly1305</option>
-	<option value="5" <% nvram_match_x("","vntcli_model", "5","selected"); %>>sm4_cbc</option>
-	<option value="6" <% nvram_match_x("","vntcli_model", "6","selected"); %>>aes_cbc</option>
-	<option value="7" <% nvram_match_x("","vntcli_model", "7","selected"); %>>aes_gcm</option>
-	</select>
-	</td>
-	</tr>
-	<tr id="vntcli_key_tr">
-	<th width="30%" style="border-top: 0 none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码</th>
-	<td style="border-top: 0 none;">
-	<input type="password" maxlength="256" class="input" size="15" id="vntcli_key" name="vntcli_key" style="width: 175px;" value="<% nvram_get_x("","vntcli_key"); %>" onKeyPress="return is_string(this,event);" />
-	<button style="margin-left: -5px;" class="btn" type="button" onclick="passwordShowHide('vntcli_key')"><i class="icon-eye-close"></i></button><br>&nbsp;<span style="color:#888;">不要使用 <span style="color: yellow;">;</span> 符号</span>
-	</td>
-	</tr><tr id="vntcli_log_td"><td colspan="3"></td></tr>
-	<tr id="vntcli_log_tr">
-	<th style="border-top: 0 none;">启用日志</th>
-	<td style="border-top: 0 none;">
-	<div class="main_itoggle">
-	<div id="vntcli_log_on_of">
-	<input type="checkbox" id="vntcli_log_fake" <% nvram_match_x("", "vntcli_log", "1", "value=1 checked"); %><% nvram_match_x("", "vntcli_log", "0", "value=0"); %> />
-	</div>
-	</div>
-	<div style="position: absolute; margin-left: -10000px;">
-	<input type="radio" value="1" name="vntcli_log" id="vntcli_log_1" class="input" value="1" <% nvram_match_x("", "vntcli_log", "1", "checked"); %> /><#checkbox_Yes#>
-	<input type="radio" value="0" name="vntcli_log" id="vntcli_log_0" class="input" value="0" <% nvram_match_x("", "vntcli_log", "0", "checked"); %> /><#checkbox_No#>
-	</div>
-	</td>
-	</tr><tr id="vntcli_log_td"><td colspan="3"></td></tr>
-	<table id="vntcli_subnet_table" width="100%" align="center" cellpadding="4" cellspacing="0" class="table">
-	<tr> <th colspan="4" style="background-color: #756c78;">子网配置 (访问对端内网设备，还需对端配置本地网段)</th></tr>
-	<tr id="row_rules_caption">
-	<th width="10%"> 备注名称 </th>
-	<th width="20%">对端目标网段 </th>
-	<th width="20%">对端接口IP </th>
-	<th width="5%"><center><i class="icon-th-list"></i></center></th>
-	</tr>
-	<tr>
-	<th><input type="text" placeholder="可留空" maxlength="128" class="span12" style="width: 100px" size="200" name="vntcli_name_x_0" value="<% nvram_get_x("", "vntcli_name_x_0"); %>"/></th>
-	<th><input type="text" placeholder="192.168.2.0/24" maxlength="255" class="span12" style="width: 150px" size="200" name="vntcli_route_x_0" value="<% nvram_get_x("", "vntcli_route_x_0"); %>"/></th>
-	<th><input type="text" placeholder="10.26.0.2" maxlength="255" class="span12" style="width: 150px" size="200" name="vntcli_ip_x_0" value="<% nvram_get_x("", "vntcli_ip_x_0"); %>" /></th>
-	<th><button class="btn" style="max-width: 219px" type="submit" onclick="return markrouteRULES(this, 64, ' Add ');" name="markrouteRULES2" value="<#CTL_add#>" size="12"><i class="icon icon-plus"></i></button></th>
-	</tr>
-	<tr id="row_rules_body" >
-	<td colspan="4" style="border-top: 0 none; padding: 0px;">
-	<div id="MrouteRULESList_Block"></div>
-	</td>
-	</tr>
-	</table>
-	</table>
-	<tr>
-	<td colspan="4" style="border-top: 0 none; padding-bottom: 20px;">
-	<br />
-	<center><input class="btn btn-primary" style="width: 219px" type="button" value="<#CTL_apply#>" onclick="applyRule()" /></center>
-	</td></td>
-	</tr><br>																
+									<div id="tabMenu" class="submenuBlock"></div>
+									<div class="alert alert-info" style="margin: 10px;">
+									<p>异地组网 是一个易于配置、快速且安全的开源VPN<br>
+									</p>
+									</div>
+
+
+
+									<table width="100%" align="center" cellpadding="4" cellspacing="0" class="table">
+
+
+										<tr>
+										<th width="30%" style="border-top: 0 none;">启用组网客户端</th>
+											<td style="border-top: 0 none;">
+													<div class="main_itoggle">
+													<div id="wireguard_enable_on_of">
+														<input type="checkbox" id="vntcli_enable_fake" <% nvram_match_x("", "vntcli_enable", "1", "value=1 checked"); %><% nvram_match_x("", "vntcli_enable", "0", "value=0"); %>  />
+													</div>
+												</div>
+												<div style="position: absolute; margin-left: -10000px;">
+													<input type="radio" value="1" name="vntcli_enable" id="vntcli_enable_1" class="input" value="1" <% nvram_match_x("", "vntcli_enable", "1", "checked"); %> /><#checkbox_Yes#>
+													<input type="radio" value="0" name="vntcli_enable" id="vntcli_enable_0" class="input" value="0" <% nvram_match_x("", "vntcli_enable", "0", "checked"); %> /><#checkbox_No#>
+												</div>
+											</td>
+
+										</tr>
+
+										<tr>
+										<th>本机识别码(不要改动) </th>
+				<td>
+					<input type="text" class="input" name="vntcli_token" id="vntcli_token" style="width: 200px" value="<% nvram_get_x("","vntcli_token"); %>" />
+				</td>
+
+										</tr>
+
+										<tr>
+										<th>设备名（格式 20）</th>
+				<td>
+					<input type="text" class="input" name="vntcli_desname" id="vntcli_desname" style="width: 60px" value="<% nvram_get_x("","vntcli_desname"); %>" />
+				</td>
+
+										</tr>
+									
+										<tr>
+										<th>对端的IP（格式 192.168.x.0/24，10.26.0.x） </th>
+				<td>
+					<input type="text" class="input" name="vntcli_localadd" id="vntcli_localadd" style="width: 400px" value="<% nvram_get_x("","vntcli_localadd"); %>" />
+				</td>
+
+										</tr>
+										<tr>
+										<th>本机虚拟ip（格式 10.26.0.x)</th>
+				<td>
+					<input type="text" class="input" name="vntcli_ip" id="vntcli_ip" style="width: 200px" value="<% nvram_get_x("","vntcli_ip"); %>" />
+				</td>
+
+										</tr>
+										<tr>
+										<th>服务器地址（默认不用填)</th>
+				<td>
+					<input type="text" class="input" name="vntcli_serip" id="vntcli_serip" style="width: 200px" value="<% nvram_get_x("","vntcli_serip"); %>" />
+				</td>
+
+										</tr>
+										<tr>
+									
+										<td colspan="4" style="border-top: 0 none;">
+												<br />
+												<center><input class="btn btn-primary" style="width: 219px" type="button" value="<#CTL_apply#>" onclick="applyRule()" /></center>
+											</td>
+										</tr>														
 	</table>
 	</div>
 	</div>
 	</div>
-	<!-- 高级设置 -->
-	<div id="wnd_vntcli_pri" style="display:none">
-	<table width="100%" cellpadding="4" cellspacing="0" class="table">
-	<table id="vntcli_pri_table" width="100%" align="center" cellpadding="4" cellspacing="0" class="table">
-	<tr>
-	<th colspan="4" style="background-color: #756c78;">进阶设置</th>
-	</tr>
-	<tr id="vntcli_proxy_tr" >
-	<th style="border-top: 0 none;">启用IP转发</th>
-	<td style="border-top: 0 none;">
-	<div class="main_itoggle">
-	<div id="vntcli_proxy_on_of">
-	<input type="checkbox" id="vntcli_proxy_fake" <% nvram_match_x("", "vntcli_proxy", "1", "value=1 checked"); %><% nvram_match_x("", "vntcli_proxy", "0", "value=0"); %> />
-	</div>
-	</div>
-	<div style="position: absolute; margin-left: -10000px;">
-	<input type="radio" value="1" name="vntcli_proxy" id="vntcli_proxy_1" class="input" value="1" <% nvram_match_x("", "vntcli_proxy", "1", "checked"); %> /><#checkbox_Yes#>
-	<input type="radio" value="0" name="vntcli_proxy" id="vntcli_proxy_0" class="input" value="0" <% nvram_match_x("", "vntcli_proxy", "0", "checked"); %> /><#checkbox_No#>
-	</div>
-	</td>
-	</tr><td colspan="2"></td>
-	<tr>
-	<th style="border-top: 0 none;">启用优化传输</th>
-	<td style="border-top: 0 none;">
-	<div class="main_itoggle">
-	<div id="vntcli_first_on_of">
-	<input type="checkbox" id="vntcli_first_fake" <% nvram_match_x("", "vntcli_first", "1", "value=1 checked"); %><% nvram_match_x("", "vntcli_first", "0", "value=0"); %> />
-	</div>
-	</div>
-	<div style="position: absolute; margin-left: -10000px;">
-	<input type="radio" value="1" name="vntcli_first" id="vntcli_first_1" class="input" value="1" <% nvram_match_x("", "vntcli_first", "1", "checked"); %> /><#checkbox_Yes#>
-	<input type="radio" value="0" name="vntcli_first" id="vntcli_first_0" class="input" value="0" <% nvram_match_x("", "vntcli_first", "0", "checked"); %> /><#checkbox_No#>
-	</div>
-	</td>
-	</tr><td colspan="2"></td>
-	<tr>
-	<th style="border-top: 0 none;">允许WireGuard访问</th>
-	<td style="border-top: 0 none;">
-	<div class="main_itoggle">
-	<div id="vntcli_wg_on_of">
-	<input type="checkbox" id="vntcli_wg_fake" <% nvram_match_x("", "vntcli_wg", "1", "value=1 checked"); %><% nvram_match_x("", "vntcli_wg", "0", "value=0"); %> />
-	</div>
-	</div>
-	<div style="position: absolute; margin-left: -10000px;">
-	<input type="radio" value="1" name="vntcli_wg" id="vntcli_wg_1" class="input" value="1" <% nvram_match_x("", "vntcli_wg", "1", "checked"); %> /><#checkbox_Yes#>
-	<input type="radio" value="0" name="vntcli_wg" id="vntcli_wg_0" class="input" value="0" <% nvram_match_x("", "vntcli_wg", "0", "checked"); %> /><#checkbox_No#>
-	</div>
-	</td>
-	</tr><td colspan="2"></td>
-	<tr>
-	<th style="border-top: 0 none;">启用数据指纹校验</th>
-	<td style="border-top: 0 none;">
-	<div class="main_itoggle">
-	<div id="vntcli_finger_on_of">
-	<input type="checkbox" id="vntcli_finger_fake" <% nvram_match_x("", "vntcli_finger", "1", "value=1 checked"); %><% nvram_match_x("", "vntcli_finger", "0", "value=0"); %> />
-	</div>
-	</div>
-	<div style="position: absolute; margin-left: -10000px;">
-	<input type="radio" value="1" name="vntcli_finger" id="vntcli_finger_1" class="input" value="1" <% nvram_match_x("", "vntcli_finger", "1", "checked"); %> /><#checkbox_Yes#>
-	<input type="radio" value="0" name="vntcli_finger" id="vntcli_finger_0" class="input" value="0" <% nvram_match_x("", "vntcli_finger", "0", "checked"); %> /><#checkbox_No#>
-	</div>
-	</td>
-	</tr><td colspan="2"></td>
-	<tr>
-	<th style="border-top: 0 none;">启用服务端客户端加密</th>
-	<td style="border-top: 0 none;">
-	<div class="main_itoggle">
-	<div id="vntcli_serverw_on_of">
-	<input type="checkbox" id="vntcli_serverw_fake" <% nvram_match_x("", "vntcli_serverw", "1", "value=1 checked"); %><% nvram_match_x("", "vntcli_serverw", "0", "value=0"); %> />
-	</div>
-	</div>
-	<div style="position: absolute; margin-left: -10000px;">
-	<input type="radio" value="1" name="vntcli_serverw" id="vntcli_serverw_1" class="input" value="1" <% nvram_match_x("", "vntcli_serverw", "1", "checked"); %> /><#checkbox_Yes#>
-	<input type="radio" value="0" name="vntcli_serverw" id="vntcli_serverw_0" class="input" value="0" <% nvram_match_x("", "vntcli_serverw", "0", "checked"); %> /><#checkbox_No#>
-	</div>
-	</td>
-	</tr><td colspan="2"></td>
-	<tr>
-	<th width="30%" style="border-top: 0 none;">设备名称</th>
-	<td style="border-top: 0 none;">
-	<input name="vntcli_desname" type="text" class="input" id="vntcli_desname" placeholder="<% nvram_get_x("","computer_name"); %>" onkeypress="return is_string(this,event);" value="<% nvram_get_x("","vntcli_desname"); %>" size="32" maxlength="15" /></td>
-	</td>
-	</tr><td colspan="3"></td>
-	<tr>
-	<th width="30%" style="border-top: 0 none;">设备ID</th>
-	<td style="border-top: 0 none;">
-	<input type="text" maxlength="128" class="input" size="15" placeholder="建议与接口IP一致" id="vntcli_id" name="vntcli_id" value="<% nvram_get_x("","vntcli_id"); %>" onKeyPress="return is_string(this,event);" />
-	</td>
-	</tr><td colspan="3"></td>
-	<tr>
-	<th width="30%" style="border-top: 0 none;">TUN网卡名</th>
-	<td style="border-top: 0 none;">
-	<input name="vntcli_tunname" type="text" class="input" id="vntcli_tunname" placeholder="vnt-tun" onkeypress="return is_string(this,event);" value="<% nvram_get_x("","vntcli_tunname"); %>" size="32" maxlength="15" /></td>
-	</td>
-	</tr><td colspan="3"></td>
-	<tr>
-          <th width="30%" style="border-top: 0 none;">MTU</th>
-          <td style="border-top: 0 none;">
-          <input type="text" name="vntcli_mtu" maxlength="4" class="input" placeholder="1450" size="5" value="<% nvram_get_x("","vntcli_mtu"); %>" onkeypress="return is_number(this,event);"/> 
-          </td>
-          </tr><td colspan="3"></td>
-	<tr>
-	<th width="30%" style="border-top: 0 none;">自定义DNS</th>
-	<td style="border-top: 0 none;">
-	<textarea maxlength="128" class="input" name="vntcli_dns" id="vntcli_dns" placeholder="223.5.5.5" style="width: 210px; height: 20px; resize: both; overflow: auto;"><% nvram_get_x("","vntcli_dns"); %></textarea>
-	<br>&nbsp;<span style="color:#888;">多个DNS使用换行分隔</span>
-	</td>
-	</tr><td colspan="3"></td>
-	<tr>
-	<th width="30%" style="border-top: 0 none;">STUN服务地址</th>
-	<td style="border-top: 0 none;">
-	<textarea maxlength="128" class="input" name="vntcli_stun" id="vntcli_stun" placeholder="stun.qq.com:3478" style="width: 210px; height: 20px; resize: both; overflow: auto;"><% nvram_get_x("","vntcli_stun"); %></textarea>
-	<br>&nbsp;<span style="color:#888;">多个STUN地址使用换行分隔</span>
-	</td>
-	</tr><td colspan="3"></td>
-	<tr>
-	<th width="30%" style="border-top: 0 none;">监听端口</th>
-	<td style="border-top: 0 none;">
-	<input name="vntcli_port" type="text" class="input" id="vntcli_port" placeholder="0,0" onkeypress="return is_string(this,event);" value="<% nvram_get_x("","vntcli_port"); %>" size="32" maxlength="55" />
-	</td>
-	</tr><td colspan="3"></td>
-	<tr>
-	<th width="30%" style="border-top: 0 none;">出口网卡名</th>
-	<td style="border-top: 0 none;">
-	<input name="vntcli_wan" type="text" class="input" id="vntcli_wan" placeholder="eth2.2" onkeypress="return is_string(this,event);" value="<% nvram_get_x("","vntcli_wan"); %>" size="32" maxlength="12" />
-	<br>⚠️&nbsp;<span style="color:#888;">错误网卡名将导致无法上网</span>
-	</td>
-	</tr><td colspan="3"></td>
-	<tr>
-	<th width="30%" style="border-top: 0 none;">打洞模式</th>
-	<td style="border-top: 0 none;">
-	<select name="vntcli_punch" class="input" style="width: 185px;">
-	<option value="0" <% nvram_match_x("","vntcli_punch", "0","selected"); %>>自动选择</option>
-	<option value="ipv4" <% nvram_match_x("","vntcli_punch", "ipv4","selected"); %>>仅IPV4-TCP/UDP</option>
-	<option value="ipv4-tcp" <% nvram_match_x("","vntcli_punch", "ipv4-tcp","selected"); %>>仅IPV4-TCP</option>
-	<option value="ipv4-udp" <% nvram_match_x("","vntcli_punch", "ipv4-udp","selected"); %>>仅IPV4-UDP</option>
-	<option value="ipv6" <% nvram_match_x("","vntcli_punch", "ipv6","selected"); %>>仅IPV6-TCP/UDP</option>
-	<option value="ipv6-tcp" <% nvram_match_x("","vntcli_punch", "ipv6-tcp","selected"); %>>仅IPV6-TCP</option>
-	<option value="ipv6-udp" <% nvram_match_x("","vntcli_punch", "ipv6-udp","selected"); %>>仅IPV6-UDP</option>
-	</select>
-	</td>
-	</tr><td colspan="3"></td>
-	<tr>
-	<th width="30%" style="border-top: 0 none;">启用压缩</th>
-	<td style="border-top: 0 none;">
-	<select name="vntcli_comp" class="input" style="width: 185px;">
-	<option value="0" <% nvram_match_x("","vntcli_comp", "0","selected"); %>>不使用</option>
-	<option value="lz4" <% nvram_match_x("","vntcli_comp", "lz4","selected"); %>>启用lz4压缩</option>
-	<option value="zstd" <% nvram_match_x("","vntcli_comp", "zstd","selected"); %>>启用zstd压缩</option>
-	</select><br>⚠️&nbsp;<span style="color:#888;">启用zstd压缩请自行编译程序</span>
-	</td>
-	</tr><td colspan="3"></td>
-	<tr>
-	<th width="30%" style="border-top: 0 none;">传输模式</th>
-	<td style="border-top: 0 none;">
-	<select name="vntcli_relay" class="input" style="width: 185px;">
-	<option value="0" <% nvram_match_x("","vntcli_relay", "0","selected"); %>>自动选择</option>
-	<option value="relay" <% nvram_match_x("","vntcli_relay", "relay","selected"); %>>仅中继转发</option>
-	<option value="p2p" <% nvram_match_x("","vntcli_relay", "p2p","selected"); %>>仅P2P直连</option>
-	</select><br>⚠️&nbsp;<span style="color:#888;">无法P2P的网络下选择仅P2P直连将会无法连接对端</span>
-	</td>
-	</tr><td colspan="3"></td>
-	<tr>
-	<th style="border: 0 none;">程序路径</th>
-	<td style="border: 0 none;">
-	<textarea maxlength="1024"class="input" name="vntcli_bin" id="vntcli_bin" placeholder="/etc/storage/bin/vnt-cli" style="width: 210px; height: 20px; resize: both; overflow: auto;"><% nvram_get_x("","vntcli_bin"); %></textarea>
-	</div><br><span style="color:#888;">自定义程序的存放路径，填写完整的路径和程序名称</span>
-	</tr>
-	</table>
-	<table  id="vntcli_mapping_table" width="100%" align="center" cellpadding="4" cellspacing="0" class="table">
-	<tr> <th colspan="5" style="background-color: #756c78;">端口映射 (将本地服务的端口映射到对端进行访问)</th></tr>
-	<tr id="row_rules_caption">
-	<th width="10%">服务协议 </th>
-	<th width="20%">本地服务端口 </th>
-	<th width="20%">对端接口IP地址 </th>
-	<th width="25%">对端访问端口 </th>
-          <th width="5%"><center><i class="icon-th-list"></i></center></th>
-          </tr>
-          <tr>
-          <th>
-          <select name="vntcli_mappnet_x_0" class="input" style="width: 60px"> 
-	<option value="0" <% nvram_match_x("","vntcli_mappnet_x_0", "0","selected"); %>>TCP</option>
-	<option value="1" <% nvram_match_x("","vntcli_mappnet_x_0", "0","selected"); %>>UDP</option>
-	</select>
-	</th>
-	<th>
-          <input maxlength="5" class="input" style="width: 80px" size="15" name="vntcli_mappport_x_0" id="vntcli_mappport_x_0" placeholder="80" value="<% nvram_get_x("","vntcli_mappport_x_0"); %>" onKeyPress="return is_number(this,event);"/>
-	</th>
-	<th><input type="text" maxlength="255" class="span12" style="width: 150px" size="200" name="vntcli_mappip_x_0" placeholder="10.26.0.22" value="<% nvram_get_x("", "vntcli_mappip_x_0"); %>"/>
-	</th>
-	<th>
-	<input maxlength="5" class="input" style="width: 80px" size="15" name="vntcli_mapeerport_x_0" id="vntcli_mapeerport_x_0" placeholder="8080" value="<% nvram_get_x("","vntcli_mapeerport_x_0"); %>" onKeyPress="return is_number(this,event);"/>
-	</th>
-	<th>
-	<button class="btn" style="max-width: 219px" type="submit" onclick="return markmappRULES(this, 64, ' Add ');" name="markmappRULES2" value="<#CTL_add#>" size="12"><i class="icon icon-plus"></i></button>
-	</th>
-	</td>
-	</tr>
-	<tr id="row_rules_body" >
-	<td colspan="5" style="border-top: 0 none; padding: 0px;">
-	<div id="MmappRULESList_Block"></div>
-	</td>
-	</tr>
-	<tr>
-	<td colspan="5" style="border-top: 0 none; padding-bottom: 20px;">
-	<br />
-	<center><input class="btn btn-primary" style="width: 219px" type="button" value="<#CTL_apply#>" onclick="applyRule()" /></center>
-	</td></td>
-	</tr>
-	</table>
-	</table>
 	</div>
 	<!-- 状态 -->
 	<div id="wnd_vntcli_sta" style="display:none">
