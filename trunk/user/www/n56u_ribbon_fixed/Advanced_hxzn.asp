@@ -23,6 +23,7 @@
 <script type="text/javascript" src="/help.js"></script>
 <script>
 var $j = jQuery.noConflict();
+<% vntcli_status(); %>
 <% login_state_hook(); %>
 $j(document).ready(function() {
 
@@ -467,7 +468,7 @@ function button_vntcli_status() {
 										<th width="30%" style="border-top: 0 none;">启用组网客户端</th>
 											<td style="border-top: 0 none;">
 													<div class="main_itoggle">
-													<div id="wireguard_enable_on_of">
+													<div id="vntcli_enable_on_of">
 														<input type="checkbox" id="vntcli_enable_fake" <% nvram_match_x("", "vntcli_enable", "1", "value=1 checked"); %><% nvram_match_x("", "vntcli_enable", "0", "value=0"); %>  />
 													</div>
 												</div>
