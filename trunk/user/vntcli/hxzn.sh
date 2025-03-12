@@ -1,6 +1,6 @@
 #!/bin/sh
 
-vnt_error="错误：${VNTCLI} 未运行，请运行成功后执行此操作！"
+vnt_error="错误：组网未运行，请运行成功后执行此操作！"
 vnt_process=$(pidof vnt-cli)
 vntpath=$(dirname "$VNTCLI")
 cmdfile="/tmp/vnt-cli_cmd.log"
