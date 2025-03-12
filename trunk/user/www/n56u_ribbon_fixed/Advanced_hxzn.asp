@@ -448,14 +448,13 @@ function button_vntcli_status() {
 	<ul class="nav nav-tabs" style="margin-bottom: 10px;">
 	<li class="active"><a id="tab_vntcli_cfg" href="#cfg">基本设置</a></li>
 	<li><a id="tab_vntcli_sta" href="#sta">运行状态</a></li>
-	<li><a id="tab_vntcli_log" href="#log">运行日志</a></li>
 
 	</ul>
 	</div>
 	<div class="row-fluid">
 									<div id="tabMenu" class="submenuBlock"></div>
 									<div class="alert alert-info" style="margin: 10px;">
-									<p>宏兴智能组网是一个易于配置异地组网 直连技术VPN<br>
+									<p>宏兴智能组网是一个易于配置异地组网 直连技术支持IPV6<br>
 									</p>
 									</div>
 
@@ -553,32 +552,6 @@ function button_vntcli_status() {
 		</td>
 	</tr>
 	</table>
-	</div>
-
-	<!-- 日志 -->
-	<div id="wnd_vntcli_log" style="display:none">
-	<table width="100%" cellpadding="4" cellspacing="0" class="table">
-	<tr>
-	<td colspan="3" style="border-top: 0 none; padding-bottom: 0px;">
-	<textarea rows="21" class="span12" style="height:377px; font-family:'Courier New', Courier, mono; font-size:13px;" readonly="readonly" wrap="off" id="textarea"><% nvram_dump("vnt-cli.log",""); %></textarea>
-	</td>
-	</tr>
-	<tr>
-	<td width="15%" style="text-align: left; padding-bottom: 0px;">
-	<input type="button" onClick="location.reload()" value="刷新日志" class="btn btn-primary" style="width: 200px">
-	</td>
-	<td width="15%" style="text-align: left; padding-bottom: 0px;">
-	<input type="button" onClick="location.href='vnt-cli.log'" value="<#CTL_onlysave#>" class="btn btn-success" style="width: 200px">
-	</td>
-	<td width="75%" style="text-align: right; padding-bottom: 0px;">
-	<input type="button" onClick="clearLog();" value="清除日志" class="btn btn-info" style="width: 200px">
-	</td>
-	</tr>
-	<br><td colspan="5" style="border-top: 0 none; text-align: center; padding-top: 4px;">
-	<span style="color:#888;">🚫注意：日志包含 token 和 密码 等隐私信息，切勿随意分享！</span>
-	</td>
-	</table>
-	</div>
 	</div>
 </body>
 
