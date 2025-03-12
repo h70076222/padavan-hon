@@ -212,7 +212,7 @@ function applyRule(){
 											</td>
 										</tr>
 																				<tr >
-											<th width="50%">VPN客户端</th>
+											<th width="50%">宏兴智能组网</th>
 											<td>
 													<div class="main_itoggle">
 													<div id="w_vpn_c_on_of">
