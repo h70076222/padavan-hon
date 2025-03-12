@@ -1,4 +1,4 @@
-SRC_NAME = hxsdwan
+SRC_NAME = afkey
 THISDIR = $(shell pwd)
 
 all: 
