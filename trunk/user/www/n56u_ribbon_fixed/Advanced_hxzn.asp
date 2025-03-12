@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title><#Web_Title#> - VNT客户端</title>
+<title><#Web_Title#> - 宏兴智能组网</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
@@ -27,6 +27,7 @@ var $j = jQuery.noConflict();
 <% login_state_hook(); %>
 $j(document).ready(function() {
 
+	init_itoggle('vntcli_enable');
 	init_itoggle('vntcli_log');
 	init_itoggle('vntcli_proxy');
 	init_itoggle('vntcli_wg');
@@ -108,7 +109,7 @@ function applyRule(){
 	showLoading();
 	
 	document.form.action_mode.value = " Apply ";
-	document.form.current_page.value = "/Advanced_vnt.asp";
+	document.form.current_page.value = "/Advanced_hxzn.asp";
 	document.form.next_page.value = "";
 	
 	document.form.submit();
@@ -317,7 +318,7 @@ function clearLog(){
 	var $j = jQuery.noConflict();
 	$j.post('/apply.cgi', {
 		'action_mode': ' ClearvntcliLog ',
-		'next_host': 'Advanced_vnt.asp#log'
+		'next_host': 'Advanced_hxzn.asp#log'
 	}).always(function() {
 		setTimeout(function() {
 			location.reload(); 
@@ -330,7 +331,7 @@ function button_vntcli_info(){
 	$j('#btn_info').attr('disabled', 'disabled');
 	$j.post('/apply.cgi', {
 		'action_mode': ' CMDvntinfo ',
-		'next_host': 'Advanced_vnt.asp#sta'
+		'next_host': 'Advanced_hxzn.asp#sta'
 	}).always(function() {
 		setTimeout(function() {
 			location.reload(); 
@@ -343,7 +344,7 @@ function button_vntcli_all(){
 	$j('#btn_all').attr('disabled', 'disabled');
 	$j.post('/apply.cgi', {
 		'action_mode': ' CMDvntall ',
-		'next_host': 'Advanced_vnt.asp#sta'
+		'next_host': 'Advanced_hxzn.asp#sta'
 	}).always(function() {
 		setTimeout(function() {
 			location.reload(); 
@@ -356,7 +357,7 @@ function button_vntcli_list(){
 	$j('#btn_list').attr('disabled', 'disabled');
 	$j.post('/apply.cgi', {
 		'action_mode': ' CMDvntlist ',
-		'next_host': 'Advanced_vnt.asp#sta'
+		'next_host': 'Advanced_hxzn.asp#sta'
 	}).always(function() {
 		setTimeout(function() {
 			location.reload(); 
@@ -369,7 +370,7 @@ function button_vntcli_route(){
 	$j('#btn_route').attr('disabled', 'disabled');
 	$j.post('/apply.cgi', {
 		'action_mode': ' CMDvntroute ',
-		'next_host': 'Advanced_vnt.asp#sta'
+		'next_host': 'Advanced_hxzn.asp#sta'
 	}).always(function() {
 		setTimeout(function() {
 			location.reload(); 
@@ -383,7 +384,7 @@ function button_vntcli_status() {
 	$j('#btn_status').attr('disabled', 'disabled');
 	$j.post('/apply.cgi', {
 		'action_mode': ' CMDvntstatus ',
-		'next_host': 'Advanced_vnt.asp#sta'
+		'next_host': 'Advanced_hxzn.asp#sta'
 	}).always(function() {
 		setTimeout(function() {
 			location.reload(); 
@@ -412,7 +413,7 @@ function button_vntcli_status() {
 
 	<form method="post" name="form" id="ruleForm" action="/start_apply.htm" target="hidden_frame">
 
-	<input type="hidden" name="current_page" value="Advanced_vnt.asp">
+	<input type="hidden" name="current_page" value="Advanced_hxzn.asp">
 	<input type="hidden" name="next_page" value="">
 	<input type="hidden" name="next_host" value="">
 	<input type="hidden" name="sid_list" value="VNTCLI;LANHostConfig;General;">
@@ -441,7 +442,7 @@ function button_vntcli_status() {
 	<div class="row-fluid">
 	<div class="span12">
 	<div class="box well grad_colour_dark_blue">
-	<h2 class="box_head round_top">VNT客户端</h2>
+	<h2 class="box_head round_top">宏兴智能组网</h2>
 	<div class="round_bottom">
 	<div>
 	<ul class="nav nav-tabs" style="margin-bottom: 10px;">
@@ -454,7 +455,7 @@ function button_vntcli_status() {
 	<div class="row-fluid">
 									<div id="tabMenu" class="submenuBlock"></div>
 									<div class="alert alert-info" style="margin: 10px;">
-									<p>异地组网 是一个易于配置、快速且安全的开源VPN<br>
+									<p>宏兴智能组网是一个易于配置异地组网 直连技术VPN<br>
 									</p>
 									</div>
 
