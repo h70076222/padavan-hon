@@ -3,7 +3,7 @@
 result=0
 mtd_part_name="Storage"
 mtd_part_dev="/dev/mtdblock5"
-mtd_part_size=4565536
+mtd_part_size=4265536
 dir_storage="/etc/storage"
 slk="/tmp/.storage_locked"
 tmp="/tmp/storage.tar"
@@ -284,28 +284,6 @@ sync && echo 3 > /proc/sys/vm/drop_caches
 #ipset add gfwlist 8.8.4.4
 
 
-#**************github下载加速******************
-#建议自建加速，项目：https://github.com/hunshcn/gh-proxy
-#设置github加速下载镜像代理地址，失效请自行更换(按下方格式填写，每行一个，末尾加/)
-nvram set github_proxy="https://github.moeyy.xyz/
-https://gh.llkk.cc/
-https://mirror.ghproxy.com/
-https://ghproxy.net/
-"
-#*************github下载加速******************
-#**************替换背景图片******************
-#上传图片命名为wood.jpg到/etc/storage/bg/目录里
-#路径必须为:/etc/storage/bg/wood.jpg 去掉下方代码前面的# 表示启用更换背景
-#mount --bind /etc/storage/bg /www/bootstrap/img/bg
-#**************替换背景图片*******************
-
-EOF
-		chmod 755 "$script_started"
-	fi
-
-	# create shutdown script
-	if [ ! -f "$script_shutd" ] ; then
-		cat > "$script_shutd" <<EOF
 #!/bin/sh
 
 ### Custom user script
