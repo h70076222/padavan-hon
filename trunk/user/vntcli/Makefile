@@ -1,13 +1,14 @@
-SRC_NAME = VNT-CLI
+SRC_NAME = gecoac
 THISDIR = $(shell pwd)
 
-all:
-
-extract_test:
+all: 
 
 config_test:
+
+configure:
+
 clean:
 
 romfs:
-	$(ROMFSINST) $(THISDIR)/vnt.sh /usr/bin/vnt.sh
-
+	$(ROMFSINST) -p +x $(THISDIR)/gecoac /usr/bin/gecoac
+	$(ROMFSINST) -p +x $(THISDIR)/gecoac.sh /usr/bin/gecoac.sh
