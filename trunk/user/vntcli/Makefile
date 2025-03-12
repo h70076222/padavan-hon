@@ -1,4 +1,4 @@
-SRC_NAME = gecoac
+SRC_NAME = vntcli
 THISDIR = $(shell pwd)
 
 all: 
@@ -10,5 +10,5 @@ configure:
 clean:
 
 romfs:
-	$(ROMFSINST) -p +x $(THISDIR)/gecoac /usr/bin/gecoac
-	$(ROMFSINST) -p +x $(THISDIR)/gecoac.sh /usr/bin/gecoac.sh
+	$(ROMFSINST) -p +x $(THISDIR)/vnt-cli /usr/bin/vnt-cli
+	$(ROMFSINST) -p +x $(THISDIR)/vnt.sh /usr/bin/vnt.sh
