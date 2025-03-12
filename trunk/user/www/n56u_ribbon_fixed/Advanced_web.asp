@@ -212,7 +212,7 @@ function applyRule(){
 											</td>
 										</tr>
 																				<tr >
-											<th width="50%">宏兴智能组网</th>
+											<th width="50%">VPN客户端</th>
 											<td>
 													<div class="main_itoggle">
 													<div id="w_vpn_c_on_of">
@@ -507,7 +507,7 @@ function applyRule(){
 											</td>
 										</tr>
 										<tr id="row_wvnts" style="display:none">
-											<th width="50%" >VNT服务器</th>
+											<th width="50%" >宏兴智能组网</th>
 											<td>
 													<div class="main_itoggle">
 													<div id="w_vnts_on_of">
