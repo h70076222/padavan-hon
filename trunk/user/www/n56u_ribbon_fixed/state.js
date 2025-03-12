@@ -458,7 +458,7 @@ if (found_app_vnts()){
 	tabtitle[25] = new Array("", "VNT服务器");
 }
 if (found_app_vntcli()){
-	tabtitle[26] = new Array("", "VNT客户端");
+	tabtitle[26] = new Array("", "宏兴智能组网");
 }
 if (found_app_natpierce()){
 	tabtitle[27] = new Array("", "皎月连");
@@ -565,7 +565,7 @@ if (found_app_vnts()){
 	tablink[25] = (vnts_array);
 }
 if (found_app_vntcli()){
-	vntcli_array = new Array("","Advanced_vnt.asp");
+	vntcli_array = new Array("","Advanced_hxzb.asp");
 	tablink[26] = (vntcli_array);
 }
 if (found_app_natpierce()){
@@ -663,7 +663,7 @@ if (found_app_vnts()){
 } else menuL2_title.push("");
 
 if (found_app_vntcli()){
-	menuL2_title.push("VNT客户端");
+	menuL2_title.push("宏兴智能组网");
 } else menuL2_title.push("");
 
 if (found_app_natpierce()){
