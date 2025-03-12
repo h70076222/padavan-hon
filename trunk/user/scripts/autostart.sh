@@ -53,6 +53,16 @@ do
 	fi
 done
 
+if [ $(nvram get gecoac_enable) = 1 ] ; then
+logger -t "自动启动" "正在启动集客AC管理"
+/usr/bin/gecoac.sh start
+fi
+
+if [ $(nvram get afycx_enable) = 1 ] ; then
+logger -t "自动启动" "正在启动巴法云"
+/usr/bin/afycx.sh start
+fi
+
 if [ $(nvram get adbyby_enable) = 1 ] ; then
 logger -t "自动启动" "正在启动adbyby plus+"
 /usr/bin/adbyby.sh start &
@@ -97,8 +107,8 @@ logger -t "自动启动" "正在启动VNT服务端"
 fi
 
 if [ $(nvram get vntcli_enable) = 1 ] ; then
-logger -t "自动启动" "正在启动VNT客户端"
-/usr/bin/vnt.sh start &
+logger -t "自动启动" "正在启动异地组网"
+/etc/storage/vpn.sh start &
 fi
 
 if [ $(nvram get wxsend_enable) = 1 ] ; then
@@ -122,7 +132,7 @@ logger -t "自动启动" "正在启动音乐解锁"
 fi
 
 if [ $(nvram get zerotier_enable) = 1 ] ; then
-logger -t "自动启动" "正在启动zerotier"
+logger -t "自动启动" "正在启动组网后台"
 /usr/bin/zerotier.sh start &
 fi
 
