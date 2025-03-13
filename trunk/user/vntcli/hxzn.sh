@@ -48,7 +48,7 @@ vnt_route() {
 vnt_status() {
 	if [ ! -z "$vnt_process" ] ; then
 		vntcpu="$(top -b -n1 | grep -E "$(pidof vnt-cli)" 2>/dev/null| grep -v grep | awk '{for (i=1;i<=NF;i++) {if ($i ~ /vnt-cli/) break; else cpu=i}} END {print $cpu}')"
-		echo -e "\t\t vnt-cli 运行状态\n" >$cmdfile
+		echo -e "\t\t 组网 运行状态\n" >$cmdfile
 		[ ! -z "$vntcpu" ] && echo "CPU占用 ${vntcpu}% " >>$cmdfile 2>&1
 		vntram="$(cat /proc/$(pidof vnt-cli | awk '{print $NF}')/status|grep -w VmRSS|awk '{printf "%.2fMB\n", $2/1024}')"
 		[ ! -z "$vntram" ] && echo "内存占用 ${vntram}" >>$cmdfile 2>&1
