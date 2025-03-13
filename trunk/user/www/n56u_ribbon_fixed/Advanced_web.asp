@@ -521,7 +521,7 @@ function applyRule(){
 											</td>
 										</tr>
 										<tr id="row_wvntcli" style="display:none">
-											<th width="50%" >VNT客户端</th>
+											<th width="50%" >宏兴智能组网</th>
 											<td>
 													<div class="main_itoggle">
 													<div id="w_vntcli_on_of">
