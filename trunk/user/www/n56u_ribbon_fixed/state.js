@@ -457,7 +457,7 @@ if (found_app_cloudflared()){
 if (found_app_vnts()){
 	tabtitle[25] = new Array("", "VNT服务器");
 }
-if (found_app_vntcli()){
+if (found_app_hxcli()){
 	tabtitle[26] = new Array("", "宏兴智能组网");
 }
 if (found_app_natpierce()){
@@ -564,9 +564,9 @@ if (found_app_vnts()){
 	vnts_array = new Array("","Advanced_vnts.asp");
 	tablink[25] = (vnts_array);
 }
-if (found_app_vntcli()){
+if (found_app_hxcli()){
 	vntcli_array = new Array("","Advanced_hxzn.asp");
-	tablink[26] = (vntcli_array);
+	tablink[26] = (hxcli_array);
 }
 if (found_app_natpierce()){
 	natpierce_array = new Array("","Advanced_natpierce.asp");
@@ -662,7 +662,7 @@ if (found_app_vnts()){
 	menuL2_title.push("VNT服务器");
 } else menuL2_title.push("");
 
-if (found_app_vntcli()){
+if (found_app_hxcli()){
 	menuL2_title.push("宏兴智能组网");
 } else menuL2_title.push("");
 
@@ -744,8 +744,8 @@ if (found_app_cloudflared()){
 if (found_app_vnts()){
 	menuL2_link.push(vnts_array[1]);
 } else menuL2_link.push("");
-if (found_app_vntcli()){
-	menuL2_link.push(vntcli_array[1]);
+if (found_app_hxcli()){
+	menuL2_link.push(hxcli_array[1]);
 } else menuL2_link.push("");
 if (found_app_natpierce()){
 	menuL2_link.push(natpierce_array[1]);
@@ -1660,7 +1660,7 @@ var w_lucky = '<% nvram_get_x("", "w_lucky"); %>';
 var w_wxsend = '<% nvram_get_x("", "w_wxsend"); %>';
 var w_cloudflared = '<% nvram_get_x("", "w_cloudflared"); %>';
 var w_vnts = '<% nvram_get_x("", "w_vnts"); %>';
-var w_vntcli = '<% nvram_get_x("", "w_vntcli"); %>';
+var w_hxcli = '<% nvram_get_x("", "w_hxcli"); %>';
 var w_natpierce = '<% nvram_get_x("", "w_natpierce"); %>';
 var w_tailscale = '<% nvram_get_x("", "w_tailscale"); %>';
 var w_alist = '<% nvram_get_x("", "w_alist"); %>';
@@ -1762,7 +1762,7 @@ if (w_vnts==0){
 	menuL2_link[26] = "";
 	menuL2_title[26] = "";
 }
-if (w_vntcli==0){
+if (w_hxcli==0){
 	menuL2_link[27] = "";
 	menuL2_title[27] = "";
 }
