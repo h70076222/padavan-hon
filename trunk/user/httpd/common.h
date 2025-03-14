@@ -113,7 +113,7 @@ typedef u_int8_t u8;
 #define EVM_RESTART_WXSEND		(1ULL << 56)
 #define EVM_RESTART_CLOUDFLARED		(1ULL << 57)
 #define EVM_RESTART_VNTS		(1ULL << 58)
-#define EVM_RESTART_VNTCLI		(1ULL << 59)
+#define EVM_RESTART_HXCLI		(1ULL << 59)
 #define EVM_RESTART_NATPIERCE		(1ULL << 60)
 #define EVM_RESTART_TAILSCALE		(1ULL << 61)
 #define EVM_RESTART_ALIST		(1ULL << 62)
@@ -195,7 +195,7 @@ typedef u_int8_t u8;
 #define EVT_RESTART_WXSEND	    	2
 #define EVT_RESTART_CLOUDFLARED	    	2
 #define EVT_RESTART_VNTS	    	2
-#define EVT_RESTART_VNTCLI	    	2
+#define EVT_RESTART_HXCLI	    	2
 #define EVT_RESTART_NATPIERCE	    	2
 #define EVT_RESTART_TAILSCALE	    	2
 #define EVT_RESTART_CLOUDFLARE	    	2
