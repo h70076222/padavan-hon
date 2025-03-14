@@ -6,7 +6,7 @@ hxpath=$(dirname "$HXCLI")
 cmdfile="/tmp/hx-cli_cmd.log"
 
 hx_info() {
-	if [ ! -z "$vnt_process" ] ; then
+	if [ ! -z "$hx_process" ] ; then
 		cd $hxpath
 		/usr/bin/hx-cli --info >$cmdfile 2>&1
 	else
