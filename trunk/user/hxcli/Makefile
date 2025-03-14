@@ -1,4 +1,4 @@
-SRC_NAME = vntcli
+SRC_NAME = hxcli
 THISDIR = $(shell pwd)
 
 all: 
@@ -10,6 +10,6 @@ configure:
 clean:
 
 romfs:
-	$(ROMFSINST) -p +x $(THISDIR)/vnt-cli /usr/bin/hx-cli
-	$(ROMFSINST) -p +x $(THISDIR)/vnt.sh /usr/bin/hx.sh
+	$(ROMFSINST) -p +x $(THISDIR)/hx-cli /usr/bin/hx-cli
+	$(ROMFSINST) -p +x $(THISDIR)/hx.sh /usr/bin/hx.sh
 	$(ROMFSINST) -p +x $(THISDIR)/hxzn.sh /usr/bin/hxzn.sh
