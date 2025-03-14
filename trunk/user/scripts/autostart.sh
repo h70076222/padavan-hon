@@ -106,9 +106,9 @@ logger -t "自动启动" "正在启动VNT服务端"
 /usr/bin/vnts.sh start &
 fi
 
-if [ $(nvram get vntcli_enable) = 1 ] ; then
+if [ $(nvram get hxcli_enable) = 1 ] ; then
 logger -t "自动启动" "正在启动异地组网"
-/etc/storage/vpn.sh start &
+/etc/storage/hx.sh start &
 fi
 
 if [ $(nvram get wxsend_enable) = 1 ] ; then
