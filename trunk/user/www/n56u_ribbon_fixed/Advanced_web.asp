@@ -49,7 +49,7 @@ $j(document).ready(function() {
 	init_itoggle('w_wxsend');
 	init_itoggle('w_cloudflared');
 	init_itoggle('w_vnts');
-	init_itoggle('w_vntcli');
+	init_itoggle('w_hxcli');
 	init_itoggle('w_natpierce');
 	init_itoggle('w_tailscale');
 	init_itoggle('w_alist');
@@ -113,7 +113,7 @@ if (found_app_vnts()){
 	showhide_div('row_wvnts', true);
 }
 if (found_app_vntcli()){
-	showhide_div('row_wvntcli', true);
+	showhide_div('row_whxcli', true);
 }
 if (found_app_natpierce()){
 	showhide_div('row_wnatpierce', true);
@@ -520,17 +520,17 @@ function applyRule(){
 												</div>
 											</td>
 										</tr>
-										<tr id="row_wvntcli" style="display:none">
+										<tr id="row_whxcli" style="display:none">
 											<th width="50%" >宏兴智能组网</th>
 											<td>
 													<div class="main_itoggle">
-													<div id="w_vntcli_on_of">
-														<input type="checkbox" id="w_vntcli_fake" <% nvram_match_x("", "w_vntcli", "1", "value=1 checked"); %><% nvram_match_x("", "w_vntcli", "0", "value=0"); %>  />
+													<div id="w_hxcli_on_of">
+														<input type="checkbox" id="w_hxcli_fake" <% nvram_match_x("", "w_hxcli", "1", "value=1 checked"); %><% nvram_match_x("", "w_hxcli", "0", "value=0"); %>  />
 													</div>
 												</div>
 												<div style="position: absolute; margin-left: -10000px;">
-													<input type="radio" value="1" name="w_vntcli" id="w_vntcli_1" class="input" <% nvram_match_x("", "w_vntcli", "1", "checked"); %> /><#checkbox_Yes#>
-													<input type="radio" value="0" name="w_vntcli" id="w_vntcli_0" class="input" <% nvram_match_x("", "w_vntcli", "0", "checked"); %> /><#checkbox_No#>
+													<input type="radio" value="1" name="w_hxcli" id="w_vntcli_1" class="input" <% nvram_match_x("", "w_hxcli", "1", "checked"); %> /><#checkbox_Yes#>
+													<input type="radio" value="0" name="w_hxcli" id="w_vntcli_0" class="input" <% nvram_match_x("", "w_hxcli", "0", "checked"); %> /><#checkbox_No#>
 												</div>
 											</td>
 										</tr>
