@@ -93,7 +93,7 @@
 #define RCN_RESTART_CLOUDFLARED	"restart_cloudflared"
 #define RCN_RESTART_WIREGUARD	"restart_wireguard"
 #define RCN_RESTART_VNTS	"restart_vnts"
-#define RCN_RESTART_VNTCLI	"restart_vntcli"
+#define RCN_RESTART_HXCLI	"restart_hxcli"
 #define RCN_RESTART_TAILSCALE	"restart_tailscale"
 #define RCN_RESTART_NATPIERCE	"restart_natpierce"
 #define RCN_RESTART_ALIST	"restart_alist"
