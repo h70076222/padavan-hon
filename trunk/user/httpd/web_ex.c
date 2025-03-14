@@ -2348,7 +2348,7 @@ static int vnts_status_hook(int eid, webs_t wp, int argc, char **argv)
 #endif
 
 #if defined (APP_HXCLI)
-static int vntcli_status_hook(int eid, webs_t wp, int argc, char **argv)
+static int hxcli_status_hook(int eid, webs_t wp, int argc, char **argv)
 {
 	int hxcli_status_code = pids("hx-cli");
 	websWrite(wp, "function hxcli_status() { return %d;}\n", hxcli_status_code);
