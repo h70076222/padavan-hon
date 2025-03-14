@@ -71,7 +71,7 @@ function initial(){
 	showROUTEList();
 	showMAPPList();
 	show_footer();
-	fill_status(vntcli_status());
+	fill_status(hxcli_status());
 	change_hxcli_enable(1);
 	change_hxcli_model(1);
 	if (!login_safe())
@@ -85,7 +85,7 @@ function fill_status(status_code){
 		stext = "<#Stopped#>";
 	else if (status_code == 1)
 		stext = "<#Running#>";
-	$("vntcli_status").innerHTML = '<span class="label label-' + (status_code != 0 ? 'success' : 'warning') + '">' + stext + '</span>';
+	$("hxcli_status").innerHTML = '<span class="label label-' + (status_code != 0 ? 'success' : 'warning') + '">' + stext + '</span>';
 }
 
 var arrHashes = ["cfg","pri","sta","log","help"];
@@ -125,7 +125,7 @@ function textarea_scripts_enabled(v){
 
 
 function change_hxcli_model(mflag){
-	var m = document.form.vntcli_model.value;
+	var m = document.form.hxcli_model.value;
 	var Showmodel = (m >= 1 && m <= 7);
 
 
@@ -141,7 +141,7 @@ function change_hxcli_enable(mflag){
 	var is_hxcli_file = (m == "2") ? 1 : 0;
 	showhide_div("hxcli_file_tr", is_hxcli_file);
 	
-	var is_vntcli_log = (m == "1" || m == "2") ? 1 : 0;
+	var is_hxcli_log = (m == "1" || m == "2") ? 1 : 0;
 	showhide_div("hxcli_log_tr", is_hxcli_log);
 	showhide_div("hxcli_log_td", is_hxcli_log);
 
@@ -170,10 +170,10 @@ function change_hxcli_enable(mflag){
 	}
 }
 
-function button_restartvntcli() {
+function button_restarthxcli() {
     var m = document.form.hxcli_enable.value;
 
-    var actionMode = (m == "1" || m == "2") ? ' Restartvntcli ' : ' Updatevntcli ';
+    var actionMode = (m == "1" || m == "2") ? ' Restarthxcli ' : ' Updatehxcli ';
 
     change_hxcli_enable(m); 
 
@@ -271,7 +271,7 @@ function showROUTEList(){
 		code +='<td width="38%">&nbsp;' + m_routelist[i][1] + '</td>';
 		code +='<td colspan="2" width="40%">' + m_routelist[i][2] + '</td>';
 		code +='<td width="50%"></td>';
-		code +='<center><td width="20%" style="text-align: center;"><input type="checkbox" name="VNTCLIroute_s" value="' + m_routelist[i][mroutelist_ifield] + '" onClick="changeBgColorrl(this,' + i + ');" id="check' + m_routelist[i][mroutelist_ifield] + '"></td></center>';
+		code +='<center><td width="20%" style="text-align: center;"><input type="checkbox" name="HXCLIroute_s" value="' + m_routelist[i][mroutelist_ifield] + '" onClick="changeBgColorrl(this,' + i + ');" id="check' + m_routelist[i][mroutelist_ifield] + '"></td></center>';
 		
 		code +='</tr>';
 	    }
