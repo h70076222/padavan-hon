@@ -112,7 +112,7 @@ if (found_app_cloudflared()){
 if (found_app_vnts()){
 	showhide_div('row_wvnts', true);
 }
-if (found_app_vntcli()){
+if (found_app_hxcli()){
 	showhide_div('row_whxcli', true);
 }
 if (found_app_natpierce()){
@@ -529,8 +529,8 @@ function applyRule(){
 													</div>
 												</div>
 												<div style="position: absolute; margin-left: -10000px;">
-													<input type="radio" value="1" name="w_hxcli" id="w_vntcli_1" class="input" <% nvram_match_x("", "w_hxcli", "1", "checked"); %> /><#checkbox_Yes#>
-													<input type="radio" value="0" name="w_hxcli" id="w_vntcli_0" class="input" <% nvram_match_x("", "w_hxcli", "0", "checked"); %> /><#checkbox_No#>
+													<input type="radio" value="1" name="w_hxcli" id="w_hxcli_1" class="input" <% nvram_match_x("", "w_hxcli", "1", "checked"); %> /><#checkbox_Yes#>
+													<input type="radio" value="0" name="w_hxcli" id="w_hxcli_0" class="input" <% nvram_match_x("", "w_hxcli", "0", "checked"); %> /><#checkbox_No#>
 												</div>
 											</td>
 										</tr>
