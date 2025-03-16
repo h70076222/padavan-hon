@@ -1,21 +1,32 @@
-Default
-INDEX0=MT7603
-INDEX0_profile_path=/etc/Wireless/RT2860/RT2860AP.dat
-INDEX0_EEPROM_offset=0x0
-INDEX0_EEPROM_size=0x400
-INDEX0_EEPROM_name=e2p
-INDEX0_main_ifname=ra0
-INDEX0_ext_ifname=ra
-INDEX0_wds_ifname=wds
-INDEX0_apcli_ifname=apcli
-INDEX1=MT7615
-INDEX1_profile_path=/etc/Wireless/iNIC/iNIC_ap.dat
-INDEX1_EEPROM_offset=0x8000
-INDEX1_EEPROM_size=0x4000
-INDEX1_EEPROM_name=e2p
-INDEX1_main_ifname=rai0
-INDEX1_ext_ifname=rai
-INDEX1_wds_ifname=wdsi
-INDEX1_apcli_ifname=apclii
-INDEX1_single_sku_path=/etc_ro/Wireless/SingleSKU_mt7615e-sku.dat
-INDEX1_bf_sku_path=/etc_ro/Wireless/SingleSKU_mt7615e-sku-bf.dat
+/* TX1806 */
+
+#define BOARD_PID		"TX1806"
+#define BOARD_NAME		"TX1806"
+#define BOARD_DESC		"TX1806 Wireless Router"
+#define BOARD_VENDOR_NAME	"H3C"
+#define BOARD_VENDOR_URL	"http://www.h3c.com.cn/cn/"
+#define BOARD_MODEL_URL		"http://www.h3c.com.cn/cn/"
+#define BOARD_BOOT_TIME		20
+#define BOARD_FLASH_TIME	120
+#define BOARD_GPIO_BTN_RESET	14
+#define  BOARD_GPIO_BTN_WPS	13
+#undef  BOARD_GPIO_LED_ALL
+#undef  BOARD_GPIO_LED_WIFI
+#define  BOARD_GPIO_LED_WAN	16
+#define BOARD_GPIO_LED_POWER	15
+#undef  BOARD_GPIO_LED_LAN
+#undef  BOARD_GPIO_LED_USB
+#undef  BOARD_GPIO_LED_ROUTER
+#undef BOARD_GPIO_PWR_USB_ON
+#undef BOARD_GPIO_PWR_USB
+#define BOARD_HAS_5G_11AC	1
+#define BOARD_HAS_5G_11AX	1
+#define BOARD_HAS_2G_11AX	1
+#define BOARD_NUM_ANT_5G_TX	2
+#define BOARD_NUM_ANT_5G_RX	2
+#define BOARD_NUM_ANT_2G_TX	2
+#define BOARD_NUM_ANT_2G_RX	2
+#define BOARD_NUM_ETH_LEDS	0
+#define BOARD_NUM_ETH_EPHY	4
+#define BOARD_HAS_EPHY_L1000	1
+#define BOARD_HAS_EPHY_W1000	1
