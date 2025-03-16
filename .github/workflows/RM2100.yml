@@ -1,5 +1,5 @@
 
-name: MI-RM2100
+name: TX1806
 
 on: 
   workflow_dispatch:
@@ -45,7 +45,7 @@ jobs:
         #sed -i 's/mtd_part_size=65536/mtd_part_size=10485760/g' /opt/rt-n56u/trunk/user/scripts/mtd_storage.sh
     - name: Build Firmware
       env:
-        TNAME: RM2100
+        TNAME: TX1806
         KERNEL: 3.4
       run: |
         cd /opt/rt-n56u/trunk
@@ -179,7 +179,7 @@ jobs:
         echo "CONFIG_FIRMWARE_ENABLE_EXT3=n" >> .config
         
         #启用 EXT4（同时支持 EXT3/EXT2）文件系统支持。约 0.4MB
-        echo "CONFIG_FIRMWARE_ENABLE_EXT4=y" >> .config
+        echo "CONFIG_FIRMWARE_ENABLE_EXT4=n" >> .config
         
         ##启用 XFS 文件系统支持。约 0.6MB
         echo "CONFIG_FIRMWARE_ENABLE_XFS=n" >> .config 
@@ -188,7 +188,7 @@ jobs:
         echo "CONFIG_FIRMWARE_ENABLE_FUSE=n" >> .config
 
         ##启用交换文件/分区支持。约 0.05MB
-        echo "CONFIG_FIRMWARE_ENABLE_SWAP=y" >> .config
+        echo "CONFIG_FIRMWARE_ENABLE_SWAP=n" >> .config
 
         ##包含 UVC 摄像头模块。约 0.2MB
         echo "CONFIG_FIRMWARE_INCLUDE_UVC=n" >> .config
@@ -391,29 +391,29 @@ jobs:
 
         ##################################
         
-        echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config  ## FRPC 客户端 约8k
-        echo "CONFIG_FIRMWARE_INCLUDE_FRPS=y" >> .config  ## FRPS 服务端 约8k
-        echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y" >> .config  ## wireguard 约1M
-        echo "CONFIG_FIRMWARE_INCLUDE_TUNSAFE=y" >> .config ## tunsafe（wireguard的TCP方式）
+        echo "CONFIG_FIRMWARE_INCLUDE_FRPC=n" >> .config  ## FRPC 客户端 约8k
+        echo "CONFIG_FIRMWARE_INCLUDE_FRPS=n" >> .config  ## FRPS 服务端 约8k
+        echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=n" >> .config  ## wireguard 约1M
+        echo "CONFIG_FIRMWARE_INCLUDE_TUNSAFE=n" >> .config ## tunsafe（wireguard的TCP方式）
         echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config ## zerotier 约 20k
-        echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config #阿里DDNS ~20k
+        echo "CONFIG_FIRMWARE_INCLUDE_AFKEY=y" >> .config #阿里DDNS ~20k
         echo "CONFIG_FIRMWARE_INCLUDE_DDNSTO=n" >> .config #ddnsto 约800k  已删除 /trunk/user/httpd/common.h
-        echo "CONFIG_FIRMWARE_INCLUDE_TAILSCALE=y" >> .config #tailscale 约20k
-        echo "CONFIG_FIRMWARE_INCLUDE_NATPIERCE=y" >> .config #皎月连 约20k
-        echo "CONFIG_FIRMWARE_INCLUDE_VNTCLI=y" >> .config #vnt客户端 约80k
-        echo "CONFIG_FIRMWARE_INCLUDE_VNTS=y" >> .config #vnt服务端 约50k
-        echo "CONFIG_FIRMWARE_INCLUDE_CLOUDFLARED=y" >> .config #CF的隧道 约50k
-        echo "CONFIG_FIRMWARE_INCLUDE_LUCKY=y" >> .config #LUCKY 约50k
-        echo "CONFIG_FIRMWARE_INCLUDE_CLOUDFLARE=y" >> .config #CF-ddns 约50k
+        echo "CONFIG_FIRMWARE_INCLUDE_HXZN=y" >> .config #tailscale 约20k
+        echo "CONFIG_FIRMWARE_INCLUDE_NATPIERCE=n" >> .config #皎月连 约20k
+        echo "CONFIG_FIRMWARE_INCLUDE_HXTCLI=n" >> .config #vnt客户端 约80k
+        echo "CONFIG_FIRMWARE_INCLUDE_VNTS=n" >> .config #vnt服务端 约50k
+        echo "CONFIG_FIRMWARE_INCLUDE_CLOUDFLARED=n" >> .config #CF的隧道 约50k
+        echo "CONFIG_FIRMWARE_INCLUDE_LUCKY=n" >> .config #LUCKY 约50k
+        echo "CONFIG_FIRMWARE_INCLUDE_CLOUDFLARE=n" >> .config #CF-ddns 约50k
         
-        echo "CONFIG_FIRMWARE_INCLUDE_ALIST=y" >> .config #ALIST文件列表 约80k
-        echo "CONFIG_FIRMWARE_INCLUDE_WXSEND=y" >> .config #微信推送 约50k
-        echo "CONFIG_FIRMWARE_INCLUDE_UUPLUGIN=y" >> .config #网易UU加速器 约50k
-        echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=y" >> .config #阿里云盘 约50k
-        echo "CONFIG_FIRMWARE_INCLUDE_WYY=y" >> .config #网易云解锁 约80k
-        echo "CONFIG_FIRMWARE_INCLUDE_CADDY=y" >> .config #在线文件管理服务不占空间(4.0kb左右)
-        echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config #smartdns
-        echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config #adguardhome不占空间(7.2kb左右)
+        echo "CONFIG_FIRMWARE_INCLUDE_ALIST=n" >> .config #ALIST文件列表 约80k
+        echo "CONFIG_FIRMWARE_INCLUDE_WXSEND=n" >> .config #微信推送 约50k
+        echo "CONFIG_FIRMWARE_INCLUDE_UUPLUGIN=n" >> .config #网易UU加速器 约50k
+        echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=n" >> .config #阿里云盘 约50k
+        echo "CONFIG_FIRMWARE_INCLUDE_WYY=n" >> .config #网易云解锁 约80k
+        echo "CONFIG_FIRMWARE_INCLUDE_CADDY=n" >> .config #在线文件管理服务不占空间(4.0kb左右)
+        echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n" >> .config #smartdns
+        echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> .config #adguardhome不占空间(7.2kb左右)
         echo "CONFIG_FIRMWARE_INCLUDE_NETCAT=n" >> .config #nc工具
         echo "CONFIG_FIRMWARE_INCLUDE_MSD_LITE=y" >> .config #MSD_LITE工具
         
