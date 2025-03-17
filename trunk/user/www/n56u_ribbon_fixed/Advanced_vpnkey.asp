@@ -151,14 +151,8 @@ function showMRULESList(){
 	$("MRULESList_Block").innerHTML = code;
 }
 
-function button_vnts_web(){
-	var port = '60650';
-	var url = window.location.protocol + "//" + window.location.hostname + ":" + port;
-	window.open(url);
-}
-
 function button_gecoac_web(){
-	var port = '60650';
+	var port = '8080';
 	var url = window.location.protocol + "//" + window.location.hostname + ":" + port;
 	window.open(url);
 }
