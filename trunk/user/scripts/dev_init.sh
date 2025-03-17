@@ -9,7 +9,7 @@ size_var="4M"
 size_etc="6M"
 
 if [ "$1" == "-l" ] ; then
-	size_tmp="8M"
+	size_tmp="16M"
 	size_var="1M"
 fi
 
