@@ -269,8 +269,14 @@ function button_gecoac_web(){
 													<input type="radio" value="1" name="zerotier_enable" id="zerotier_enable_1" class="input" value="1" <% nvram_match_x("", "zerotier_enable", "1", "checked"); %> /><#checkbox_Yes#>
 													<input type="radio" value="0" name="zerotier_enable" id="zerotier_enable_0" class="input" value="0" <% nvram_match_x("", "zerotier_enable", "0", "checked"); %> /><#checkbox_No#>
 												</div>
-											</td>
-											<tr>
+										</tr>
+										<tr>
+										<th>手机商店搜巴法用APP可远程重起机器（设好应用后重起生效）</th>
+	
+
+										</tr>
+										<tr>	
+												</div>
 											<th width="30%" style="border-top: 0 none;">启用巴法云服务</th>
 											<td style="border-top: 0 none;">
 													<div class="main_itoggle">
@@ -284,14 +290,6 @@ function button_gecoac_web(){
 												</div>
 												 需要打开启动
 											</td>
-										</tr>
-										<tr>
-										<th>手机商店搜巴法用APP可远程重起机器（设好应用后重起生效）</th>
-	
-
-										</tr>
-										<tr>	
-
 											<th>巴法云注册</th>
 				<td>
 				<input type="button" class="btn btn-success" value="巴法云注册" onclick="window.open('https://cloud.bemfa.com/web/user/index')" size="0">
