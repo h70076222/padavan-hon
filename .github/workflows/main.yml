@@ -1,4 +1,4 @@
-name: MA1210SDWAN
+name: BCR810SDWAN
 on: 
   release:
     types: [published]
@@ -37,7 +37,7 @@ jobs:
     
     - name: Build Firmware
       env:
-        TNAME: MA1210SDWAN
+        TNAME: BCR810SDWAN
       run: |
         cd /opt/padavan/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
