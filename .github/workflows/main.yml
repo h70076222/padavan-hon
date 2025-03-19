@@ -1,4 +1,4 @@
-name: R2100
+name: MA1210SDWAN
 on: 
   release:
     types: [published]
@@ -37,7 +37,7 @@ jobs:
     
     - name: Build Firmware
       env:
-        TNAME: R2100
+        TNAME: MA1210SDWAN
       run: |
         cd /opt/padavan/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
