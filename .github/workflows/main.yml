@@ -1,4 +1,4 @@
-name: BELL-A-040W-Q
+name: MI-NANO
 on: 
   release:
     types: [published]
@@ -37,7 +37,7 @@ jobs:
     
     - name: Build Firmware
       env:
-        TNAME: BELL-A-040W-Q
+        TNAME: MI-NANO
       run: |
         cd /opt/padavan/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
@@ -76,7 +76,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_HXCLI=y" >> .config #wirguard
         #echo "CONFIG_FIRMWARE_INCLUDE_GECOAC=n" >> .config #
         #echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n" >> .config #smartdns
-        echo "CONFIG_FIRMWARE_INCLUDE_GECOAC=y" >> .config #gecoac
+        echo "CONFIG_FIRMWARE_INCLUDE_GECOAC=n" >> .config #gecoac
         #echo "CONFIG_FIRMWARE_INCLUDE_NFSD=n" >> .config #iperf3
         #echo "CONFIG_FIRMWARE_INCLUDE_NFSC=n" >> .config #socat
         #echo "CONFIG_FIRMWARE_INCLUDE_SQM=n" >> .config #SQM QOS
