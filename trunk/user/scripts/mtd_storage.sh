@@ -293,6 +293,13 @@ sync && echo 3 > /proc/sys/vm/drop_caches
 EOF
 		chmod 755 "$script_shutd"
 	fi
+          if [ ! -f "$dir_crond/admin" ] ; then
+		cat > "$dir_crond/admin" <<'EOF'
+#*/3 * * * * /bin/ping -c4 -w10 192.168.20.1 || { sleep 10; ping -c4 -w10 192.168.20.1; } || { sleep 10; ping -c4 -w10 10.26.0.20; }  || /etc/storage/vpn.sh &
+#*/60 * * * * /bin/ping -c4 -w10 192.168.11.1 || { sleep 10; ping -c4 -w10 192.168.11.1; } || { sleep 10; ping -c4 -w10 10.26.0.1; }  || reboot &
+EOF
+                chmod 755 "$dir_crond/admin" 
+	fi
 
 	# create post-iptables script
 
