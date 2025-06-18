@@ -1,4 +1,4 @@
-name: ZN8800N
+name: ZX880N
 on: 
   #release:
   #  types: [published]
@@ -37,7 +37,7 @@ jobs:
   
     - name: Build Firmware
       env:
-        TNAME: ZN8800N
+        TNAME: ZX880N
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
