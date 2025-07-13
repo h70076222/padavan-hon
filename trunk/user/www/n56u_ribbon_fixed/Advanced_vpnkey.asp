@@ -59,7 +59,7 @@ showMRULESList();
 }
 function showmenu(){
 showhide_div('allink', found_app_aliddns());
-showhide_div('ddlink', found_app_ddnsto());
+showhide_div('ddlink', found_app_nelink());
 showhide_div('wilink', 1);
 }
 
@@ -221,7 +221,7 @@ function button_gecoac_web(){
 								    <a href="Advanced_vpnkey.asp"><#menu5_32_1#></a>
 								</li>
 								<li id="wirlink" style="display:none">
-								    <a href="Advanced_wireguard.asp"><#menu5_35_1#></a>
+								    <a href="Advanced_nelink.asp"><#menu5_35_1#></a>
 								</li>
 							    </ul>
 							</div>
