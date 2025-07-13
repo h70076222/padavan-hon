@@ -1,4 +1,4 @@
-name: NX18N
+name: ZN8800N
 on: 
   #release:
   #  types: [published]
@@ -37,7 +37,7 @@ jobs:
   
     - name: Build Firmware
       env:
-        TNAME: NX18N
+        TNAME: ZN8800N
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
@@ -75,7 +75,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config #zerotier ~1.3M
         echo "CONFIG_FIRMWARE_INCLUDE_AFKEY=y" >> .config #aliddns
         echo "CONFIG_FIRMWARE_INCLUDE_HXCLI=y" >> .config #wirguard
-        #echo "CONFIG_FIRMWARE_INCLUDE_GECOAC=n" >> .config #gecoac
+        echo "CONFIG_FIRMWARE_INCLUDE_NELINK=y" >> .config #gecoac
         #echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n" >> .config #smartdns
         echo "CONFIG_FIRMWARE_INCLUDE_HXSDWAN=n" >> .config #ttyd
         #echo "CONFIG_FIRMWARE_INCLUDE_NFSD=n" >> .config #iperf3
