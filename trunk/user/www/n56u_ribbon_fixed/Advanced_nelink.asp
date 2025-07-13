@@ -166,8 +166,8 @@ function done_validating(action){
 													</div>
 												</div>
 												<div style="position: absolute; margin-left: -10000px;">
-													<input type="radio" value="1" name="hxcli_enable" id="hxcli_enable_1" class="input" value="1" <% nvram_match_x("", "nelink_enable", "1", "checked"); %> /><#checkbox_Yes#>
-													<input type="radio" value="0" name="hxcli_enable" id="hxcli_enable_0" class="input" value="0" <% nvram_match_x("", "nelink_enable", "0", "checked"); %> /><#checkbox_No#>
+													<input type="radio" value="1" name="nelink_enable" id="nelink_enable_1" class="input" value="1" <% nvram_match_x("", "nelink_enable", "1", "checked"); %> /><#checkbox_Yes#>
+													<input type="radio" value="0" name="nelink_enable" id="nelink_enable_0" class="input" value="0" <% nvram_match_x("", "nelink_enable", "0", "checked"); %> /><#checkbox_No#>
 												</div>
 											</td>
 
@@ -182,36 +182,49 @@ function done_validating(action){
 										</tr>
 
 										<tr>
-										<th>设备名（格式 20）</th>
+										<th>本机虚拟ip（格式 20）</th>
 				<td>
-					<input type="text" class="input" name="hxcli_desname" id="hxcli_desname" style="width: 60px" value="<% nvram_get_x("","hxcli_desname"); %>" />
+					<input type="text" class="input" name="netink_ip" id="netink_ip" style="width: 60px" value="<% nvram_get_x("","netink_ip"); %>" />
 				</td>
 
 										</tr>
 									
 										<tr>
-										<th>对端的IP（格式 192.168.x.0/24，10.26.0.x） </th>
+										<th>对端的IP（格式 192.168.x.0） </th>
 				<td>
-					<input type="text" class="input" name="hxcli_localadd" id="hxcli_localadd" style="width: 400px" value="<% nvram_get_x("","hxcli_localadd"); %>" />
+					<input type="text" class="input" name="netink_inlan1" id="netink_inlan1" style="width: 200px" value="<% nvram_get_x("","netink_inlan1"); %>" />
 				</td>
 
 										</tr>
 										<tr>
-										<th>本机虚拟ip（格式 10.26.0.x)</th>
+										<th>对端的虚拟ip（格式 10.26.2.x)</th>
 				<td>
-					<input type="text" class="input" name="hxcli_ip" id="hxcli_ip" style="width: 200px" value="<% nvram_get_x("","hxcli_ip"); %>" />
+					<input type="text" class="input" name=netink_xuip1" id="netink_xuip1" style="width: 200px" value="<% nvram_get_x("","netink_xuip1"); %>" />
 				</td>
 
 										</tr>
 										<tr>
-										<th>服务器地址（默认不用填)</th>
+										<th>开起第2个对端</th>
 				<td>
-					<input type="text" class="input" name="hxcli_serip" id="hxcli_serip" style="width: 200px" value="<% nvram_get_x("","hxcli_serip"); %>" />
+					<input type="text" class="input" name=$netink_log" id="$netink_log" style="width: 50px" value="<% nvram_get_x("","$netink_log"); %>" />
 				</td>
 
 										</tr>
 										<tr>
-									
+											<th>对端的IP2（格式 192.168.x.0） </th>
+				<td>
+					<input type="text" class="input" name="netink_inlan2" id="netink_inlan2" style="width: 200px" value="<% nvram_get_x("","netink_inlan2"); %>" />
+				</td>
+
+										</tr>
+										<tr>
+										<th>对端的虚拟ip2（格式 10.26.2.x)</th>
+				<td>
+					<input type="text" class="input" name=netink_xuip2" id="netink_xuip2" style="width: 200px" value="<% nvram_get_x("","netink_xuip2"); %>" />
+				</td>
+
+										</tr>
+										<tr>
 										<td colspan="4" style="border-top: 0 none;">
 												<br />
 												<center><input class="btn btn-primary" style="width: 219px" type="button" value="<#CTL_apply#>" onclick="applyRule()" /></center>
