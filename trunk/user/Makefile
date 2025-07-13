@@ -253,6 +253,7 @@ dir_$(CONFIG_FIRMWARE_INCLUDE_WXSEND)	                       += wxsend
 dir_$(CONFIG_FIRMWARE_INCLUDE_CLOUDFLARED)	                       += cloudflared
 dir_$(CONFIG_FIRMWARE_INCLUDE_VNTS)	                       += vnts
 dir_$(CONFIG_FIRMWARE_INCLUDE_HXCLI)	                       += hxcli
+dir_$(CONFIG_FIRMWARE_INCLUDE_NELINK)	                       += nelink
 dir_$(CONFIG_FIRMWARE_INCLUDE_NATPIERCE)	                       += natpierce
 dir_$(CONFIG_FIRMWARE_INCLUDE_TAILSCALE)	                       += tailscale
 dir_$(CONFIG_FIRMWARE_INCLUDE_ALIST)	                       += alist
