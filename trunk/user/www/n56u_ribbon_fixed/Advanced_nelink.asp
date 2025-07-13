@@ -2,7 +2,7 @@
 <!--Copyright by hiboy-->
 <html>
 <head>
-<title><#Web_Title#> - 自建微信推送</title>
+<title><#Web_Title#> - NE异地组网</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
@@ -121,7 +121,7 @@ function done_validating(action){
 	<div class="row-fluid">
 	<div class="span12">
 	<div class="box well grad_colour_dark_blue">
-	<h2 class="box_head round_top">自建微信推送</h2>
+	<h2 class="box_head round_top">NE异地组网</h2>
 	<div class="round_bottom">
 	<div class="row-fluid">
 	<div id="tabMenu" class="submenuBlock"></div>
@@ -131,7 +131,7 @@ function done_validating(action){
 								<div class="row-fluid">
 									<div id="tabMenu" class="submenuBlock"></div>
 									<div class="alert alert-info" style="margin: 10px;">
-									<p>宏兴智能组网是一个易于配置异地组网 直连技术支持IPV6<br>
+									<p>NE异地组网是一个易于配置异地组网 直连技术支持IPV6<br>
 									</p>
 									</div>
 
