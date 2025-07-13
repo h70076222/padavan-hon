@@ -894,6 +894,18 @@ struct nvram_pair router_defaults[] = {
 	{ "hxcli_mappnum_x", "0" },
 #endif
 
+#if defined(APP_NELINK)
+	/*nelink*/
+	{ "nelink_enable", "0" },
+	{ "netink_token", "" },
+	{ "netink_ip", "192.168.2.x" },
+	{ "netink_inlan1", "192.168.x.0" },
+	{ "netink_xuip1", "" },
+	{ "netink_inlan2", "" },
+	{ "netink_xuip1", "" },
+	{ "netink_log", "#" },
+#endif
+
 #if defined(APP_CLOUDFLARED)
 	/*cloudflared*/
 	{ "cloudflared_enable", "0" },
