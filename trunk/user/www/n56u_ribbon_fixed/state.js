@@ -526,7 +526,7 @@ if (found_app_aliddns()){
 	tablink[16] = (zerotier_array);
 }else if (found_app_nelink()){
 	wireguard_array = new Array("","Advanced_nelink.asp");
-	tablink[16] = (wireguard_array);
+	tablink[16] = (nelink_array);
 }
 if (found_app_frp()){
 	frp_array = new Array("","Advanced_frp.asp");
