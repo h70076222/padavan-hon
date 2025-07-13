@@ -2356,6 +2356,15 @@ static int hxcli_status_hook(int eid, webs_t wp, int argc, char **argv)
 }
 #endif
 
+#if defined (APP_NELINK)
+static int nelink_status_hook(int eid, webs_t wp, int argc, char **argv)
+{
+	int nelink_status_code = pids("nelink");
+	websWrite(wp, "function nelink_status() { return %d;}\n", nelink_status_code);
+	return 0;
+}
+#endif
+
 /*#if defined (APP_NPC)
 static int npc_status_hook(int eid, webs_t wp, int argc, char **argv)
 {
@@ -2717,6 +2726,11 @@ ej_firmware_caps_hook(int eid, webs_t wp, int argc, char **argv)
 	int found_app_hxcli = 1;
 #else
 	int found_app_hxcli = 0;
+#endif
+#if defined(APP_NELINK)
+	int found_app_nelink = 1;
+#else
+	int found_app_nelink = 0;
 #endif
 #if defined(APP_NVPPROXY)
 	int found_app_nvpproxy = 1;
@@ -4119,6 +4133,13 @@ apply_cgi(const char *url, webs_t wp)
 		websRedirect(wp, current_url);
 		return 0;
 	}
+	else if (!strcmp(value, " Restartnetlink "))
+	{
+#if defined(APP_NETLINK)
+		system("/usr/bin/ne.sh restart &");
+#endif
+		return 0;
+	}
 	else if (!strcmp(value, " Restartcloudflared "))
 	{
 #if defined(APP_CLOUDFLARED)
@@ -4835,6 +4856,21 @@ static char hxcli_log_txt[] =
 
 #endif
 
+#if defined (APP_NELINK)
+static void
+do_nelink_log_file(const char *url, FILE *stream)
+{
+	dump_file(stream, "/tmp/nelink.log");
+	fputs("\r\n", stream);
+}
+
+static char nelink_log_txt[] =
+"Content-Disposition: attachment;\r\n"
+"filename=nelink.log"
+;
+
+#endif
+
 #if defined (APP_VNTS)
 static void
 do_vnts_log_file(const char *url, FILE *stream)
@@ -4911,6 +4947,9 @@ struct mime_handler mime_handlers[] = {
 #endif
 #if defined(APP_HXCLI)
 	{ "hx-cli.log", "application/force-download", hxcli_log_txt, NULL, do_hxcli_log_file, 1 },
+#endif
+#if defined(APP_NELINK)
+	{ "nelink.log", "application/force-download", nelink_log_txt, NULL, do_nelink_log_file, 1 },
 #endif
 #if defined(APP_VNTS)
 	{ "vnts.log", "application/force-download", vnts_log_txt, NULL, do_vnts_log_file, 1 },
@@ -5253,6 +5292,9 @@ struct ej_handler ej_handlers[] =
 #endif
 #if defined (APP_HXCLI)
 	{ "hxcli_status", hxcli_status_hook},
+#endif
+#if defined (APP_NELINK)
+	{ "nelink_status", nelink_status_hook},
 #endif
 #if defined (APP_NVPPROXY)
 	{ "nvpproxy_status", nvpproxy_status_hook},
