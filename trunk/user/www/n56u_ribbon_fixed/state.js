@@ -427,7 +427,7 @@ if (found_app_aliddns()){
 	tabtitle[16] = new Array("", "<#menu5_32_2#>");
 } else if (found_app_zerotier()){
 	tabtitle[16] = new Array("", "<#menu5_32#>");
-} else if (found_app_wireguard()){
+} else if (found_app_nelink()){
 	tabtitle[16] = new Array("", "<#menu5_35#>");
 }
 if (found_app_frp()){
@@ -524,8 +524,8 @@ if (found_app_aliddns()){
 }else if (found_app_zerotier()){
 	zerotier_array = new Array("","Advanced_vpnkey.asp");
 	tablink[16] = (zerotier_array);
-}else if (found_app_wireguard()){
-	wireguard_array = new Array("","Advanced_wireguard.asp");
+}else if (found_app_nelink()){
+	wireguard_array = new Array("","Advanced_nelink.asp");
 	tablink[16] = (wireguard_array);
 }
 if (found_app_frp()){
@@ -622,7 +622,7 @@ if (found_app_aliddns()){
 	menuL2_title.push("<#menu5_30#>");
 } else if (found_app_zerotier()){
 	menuL2_title.push("<#menu5_30#>");
-} else if (found_app_wireguard()){
+} else if (found_app_nelink()){
 	menuL2_title.push("<#menu5_30#>");
 } else menuL2_title.push("");
 
@@ -714,8 +714,8 @@ if (found_app_aliddns()){
 	menuL2_link.push(ddnsto_array[1]);
 } else if (found_app_zerotier()){
 	menuL2_link.push(zerotier_array[1]);
-} else if (found_app_wireguard()){
-	menuL2_link.push(wireguard_array[1]);
+} else if (found_app_nelink()){
+	menuL2_link.push(nelink_array[1]);
 } else menuL2_link.push("");
 if (found_app_frp()){
 	menuL2_link.push(frp_array[1]);
