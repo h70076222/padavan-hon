@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+<!--Copyright by hiboy-->
 <html>
 <head>
-<title><#Web_Title#> - <#menu5_35#></title>
+<title><#Web_Title#> - 自建微信推送</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
@@ -17,16 +18,16 @@
 <script type="text/javascript" src="/bootstrap/js/engage.itoggle.min.js"></script>
 <script type="text/javascript" src="/state.js"></script>
 <script type="text/javascript" src="/general.js"></script>
-<script type="text/javascript" src="/itoggle.js"></script>
 <script type="text/javascript" src="/client_function.js"></script>
+<script type="text/javascript" src="/itoggle.js"></script>
 <script type="text/javascript" src="/popup.js"></script>
 <script type="text/javascript" src="/help.js"></script>
-<script type="text/javascript" src="/help_b.js"></script>
 <script>
 var $j = jQuery.noConflict();
+<% neink_status(); %>
 <% login_state_hook(); %>
 $j(document).ready(function() {
-	
+
 	init_itoggle('nelink_enable');
 
 });
@@ -34,7 +35,6 @@ $j(document).ready(function() {
 </script>
 <script>
 
-<% login_state_hook(); %>
 
 
 function initial(){
@@ -44,12 +44,6 @@ function initial(){
 	show_footer();
 	if (!login_safe())
         		textarea_scripts_enabled(0);
-}
-
-function showmenu(){
-	showhide_div('allink', found_app_aliddns());
-	showhide_div('dtolink', found_app_ddnsto());
-	showhide_div('zelink', found_app_zerotier());
 }
 
 function textarea_scripts_enabled(v){
@@ -112,36 +106,25 @@ function done_validating(action){
 			<div class="span3">
 				<!--Sidebar content-->
 				<!--=====Beginning of Main Menu=====-->
-				<div class="well sidebar-nav side_nav" style="padding: 0px;">
-					<ul id="mainMenu" class="clearfix"></ul>
-					<ul class="clearfix">
-						<li>
-							<div id="subMenu" class="accordion"></div>
-						</li>
-					</ul>
-				</div>
-			</div>
+	<div class="well sidebar-nav side_nav" style="padding: 0px;">
+	<ul id="mainMenu" class="clearfix"></ul>
+	<ul class="clearfix">
+	<li>
+	<div id="subMenu" class="accordion"></div>
+	</li>
+	</ul>
+	</div>
+	</div>
 
-			<div class="span9">
-				<!--Body content-->
-				<div class="row-fluid">
-					<div class="span12">
-						<div class="box well grad_colour_dark_blue">
-							<h2 class="box_head round_top"><#menu5_35_1#> - <#menu5_30#></h2>
-							<div class="round_bottom">
-							<div>
-							    <ul class="nav nav-tabs" style="margin-bottom: 10px;">
-								<li id="allink" style="display:none">
-								    <a href="Advanced_aliddns.asp"><#menu5_23_1#></a>
-								</li>
-								<li id="dtolink" style="display:none">
-								    <a href="Advanced_ddnsto.asp"><#menu5_32_2#></a>
-								</li>
-								<li id="zelink" style="display:none">
-								    <a href="Advanced_zerotier.asp"><#menu5_32_1#></a>
-								</li>
-								<li class="active">
-								    <a href="Advanced_nelink.asp"><#menu5_35_1#></a>
+				<div class="span9">
+	<!--Body content-->
+	<div class="row-fluid">
+	<div class="span12">
+	<div class="box well grad_colour_dark_blue">
+	<h2 class="box_head round_top">自建微信推送</h2>
+	<div class="round_bottom">
+	<div class="row-fluid">
+	<div id="tabMenu" class="submenuBlock"></div>
 								</li>
 							    </ul>
 							</div>
