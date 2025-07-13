@@ -242,8 +242,8 @@ endif
 ifneq ($(CONFIG_FIRMWARE_INCLUDE_DDNSTO),y)
 	rm -f $(INSTALLDIR)/www/Advanced_ddnsto.asp
 endif
-ifneq ($(CONFIG_FIRMWARE_INCLUDE_WIREGUARD),y)
-	rm -f $(INSTALLDIR)/www/Advanced_wireguard.asp
+ifneq ($(CONFIG_FIRMWARE_INCLUDE_NELINK),y)
+	rm -f $(INSTALLDIR)/www/Advanced_nelink.asp
 endif
 ifneq ($(CONFIG_FIRMWARE_INCLUDE_ALDRIVER),y)
 	rm -f $(INSTALLDIR)/www/Advanced_aliyundrive.asp
