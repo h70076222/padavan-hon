@@ -242,9 +242,6 @@ endif
 ifneq ($(CONFIG_FIRMWARE_INCLUDE_DDNSTO),y)
 	rm -f $(INSTALLDIR)/www/Advanced_ddnsto.asp
 endif
-ifneq ($(CONFIG_FIRMWARE_INCLUDE_NELINK),y)
-	rm -f $(INSTALLDIR)/www/Advanced_nelink.asp
-endif
 ifneq ($(CONFIG_FIRMWARE_INCLUDE_ALDRIVER),y)
 	rm -f $(INSTALLDIR)/www/Advanced_aliyundrive.asp
 endif
@@ -254,14 +251,17 @@ endif
 ifneq ($(CONFIG_FIRMWARE_INCLUDE_LUCKY),y)
 	rm -f $(INSTALLDIR)/www/Advanced_lucky.asp
 endif
-ifneq ($(CONFIG_FIRMWARE_INCLUDE_WXSEND),y)
-	rm -f $(INSTALLDIR)/www/Advanced_wxsend.asp
+ifneq ($(CONFIG_FIRMWARE_INCLUDE_WIREGUARD),y)
+	rm -f $(INSTALLDIR)/www/Advanced_wireguard.asp
 endif
 ifneq ($(CONFIG_FIRMWARE_INCLUDE_CLOUDFLARED),y)
 	rm -f $(INSTALLDIR)/www/Advanced_cloudflared.asp
 endif
 ifneq ($(CONFIG_FIRMWARE_INCLUDE_VNTS),y)
 	rm -f $(INSTALLDIR)/www/Advanced_vnts.asp
+endif
+ifneq ($(CONFIG_FIRMWARE_INCLUDE_NELINK),y)
+	rm -f $(INSTALLDIR)/www/Advanced_nelink.asp
 endif
 ifneq ($(CONFIG_FIRMWARE_INCLUDE_HXCLI),y)
 	rm -f $(INSTALLDIR)/www/Advanced_hxzn.asp
