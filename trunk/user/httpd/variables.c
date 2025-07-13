@@ -1719,6 +1719,9 @@
 #if defined(APP_HXCLI)
 		{"HXCLI",		variables_HXCLI},
 #endif
+#if defined(APP_NELINK)
+		{"NELINK",		variables_NELINK},
+#endif
 #if defined(APP_TAILSCALE)
 		{"TAILSCALE",		variables_TAILSCALE},
 #endif
@@ -1877,6 +1880,9 @@
 #endif
 #if defined(APP_HXCLI)
 		{EVM_RESTART_HXCLI,		EVT_RESTART_HXCLI,		RCN_RESTART_HXCLI,	0},
+#endif
+#if defined(APP_NELINK)
+		{EVM_RESTART_NELINK,		EVT_RESTART_NELINK,		RCN_RESTART_NELINK,	0},
 #endif
 #if defined(APP_TAILSCALE)
 		{EVM_RESTART_TAILSCALE,		EVT_RESTART_TAILSCALE,		RCN_RESTART_TAILSCALE,	0},
