@@ -607,7 +607,7 @@ void stop_nelink(void){
 
 void start_nelink(void){
 	int nelink_enable = nvram_get_int("nelink_enable");
-	if ( hxcli_enable == 1)
+	if ( nelink_enable == 1)
 		eval("/usr/bin/ne.sh","start");
 }
 
