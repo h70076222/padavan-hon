@@ -1046,6 +1046,20 @@
 	};
 #endif
 
+#if defined(APP_NELINK)
+	struct variable variables_NELINK[] = {
+			{"nelink_enable", "", NULL, EVM_RESTART_NELINK},
+			{"netink_token", "", NULL, EVM_RESTART_NELINK},
+			{"nelink_ip", "", NULL, EVM_RESTART_NELINK},
+			{"netink_inlan1", "", NULL, EVM_RESTART_NELINK},
+			{"netink_xuip1", "", NULL, EVM_RESTART_NELINK},
+			{"netink_inlan2", "", NULL, EVM_RESTART_NELINK},
+			{"netink_xuip2", "", NULL, EVM_RESTART_NELINK},
+			{"netink_log", "", NULL, EVM_RESTART_NELINK},
+			{0,0,0,0}
+	};
+#endif
+
 /*#if defined(APP_NPC)
 	struct variable variables_NpcConf[] = {
 			{"npc_enable", "", NULL, EVM_RESTART_NPC},
