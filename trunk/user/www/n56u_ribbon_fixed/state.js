@@ -448,8 +448,8 @@ if (found_app_uuplugin()){
 if (found_app_lucky()){
 	tabtitle[22] = new Array("", "Lucky");
 }
-if (found_app_wxsend()){
-	tabtitle[23] = new Array("", "微信推送");
+if (found_app_nelink()){
+	tabtitle[23] = new Array("", "NE异地组网");
 }
 if (found_app_cloudflared()){
 	tabtitle[24] = new Array("", "CloudFlared");
@@ -552,9 +552,9 @@ if (found_app_lucky()){
 	lucky_array = new Array("","Advanced_lucky.asp");
 	tablink[22] = (lucky_array);
 }
-if (found_app_wxsend()){
-	wxsend_array = new Array("","Advanced_wxsend.asp");
-	tablink[23] = (wxsend_array);
+if (found_app_nelink()){
+	nelink_array = new Array("","Advanced_nelink.asp");
+	tablink[23] = (nelink_array);
 }
 if (found_app_cloudflared()){
 	cloudflared_array = new Array("","Advanced_cloudflared.asp");
@@ -650,8 +650,8 @@ if (found_app_lucky()){
 	menuL2_title.push("Lucky");
 } else menuL2_title.push("");
 
-if (found_app_wxsend()){
-	menuL2_title.push("微信推送");
+if (found_app_nelink()){
+	menuL2_title.push("NE异地组网");
 } else menuL2_title.push("");
 
 if (found_app_cloudflared()){
@@ -735,8 +735,8 @@ if (found_app_uuplugin()){
 if (found_app_lucky()){
 	menuL2_link.push(lucky_array[1]);
 } else menuL2_link.push("");
-if (found_app_wxsend()){
-	menuL2_link.push(wxsend_array[1]);
+if (found_app_nelink()){
+	menuL2_link.push(nelink_array[1]);
 } else menuL2_link.push("");
 if (found_app_cloudflared()){
 	menuL2_link.push(cloudflared_array[1]);
