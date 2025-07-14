@@ -29,8 +29,14 @@ var $j = jQuery.noConflict();
 $j(document).ready(function() {
 
 	init_itoggle('nelink_enable');
+	function () {
+		var newHash = $j(this).attr('href').toLowerCase();
+		showTab(newHash);
+		return false;
+	});
 
 });
+
 
 </script>
 <script>
@@ -102,10 +108,10 @@ function done_validating(action){
 
 
 	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span3">
-				<!--Sidebar content-->
-				<!--=====Beginning of Main Menu=====-->
+	<div class="row-fluid">
+	<div class="span3">
+	<!--Sidebar content-->
+	<!--=====Beginning of Main Menu=====-->
 	<div class="well sidebar-nav side_nav" style="padding: 0px;">
 	<ul id="mainMenu" class="clearfix"></ul>
 	<ul class="clearfix">
@@ -115,23 +121,21 @@ function done_validating(action){
 	</ul>
 	</div>
 	</div>
-
-				<div class="span9">
+	<div class="span9">
 	<!--Body content-->
 	<div class="row-fluid">
 	<div class="span12">
 	<div class="box well grad_colour_dark_blue">
-	<h2 class="box_head round_top">NE异地组网</h2>
+	<h2 class="box_head round_top">宏兴智能组网</h2>
 	<div class="round_bottom">
 	<div class="row-fluid">
 	<div id="tabMenu" class="submenuBlock"></div>
-								</li>
-							    </ul>
-							</div>
-								<div class="row-fluid">
+	</ul>
+	</div>
+	<div class="row-fluid">
 									<div id="tabMenu" class="submenuBlock"></div>
 									<div class="alert alert-info" style="margin: 10px;">
-									<p>NE异地组网是一个易于配置异地组网 直连技术支持IPV6<br>
+									<p>NE智能组网是一个易于配置异地组网 直连技术支持IPV6<br>
 									</p>
 									</div>
 
