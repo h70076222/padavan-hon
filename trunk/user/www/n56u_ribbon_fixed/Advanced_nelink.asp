@@ -157,7 +157,7 @@ function done_validating(action){
 										<tr>
 										<th>本机识别码(不要改动) </th>
 				<td>
-					<input type="text" class="input" name="nelink_token" id="nelink_token" style="width: 200px" value="<% nvram_get_x("","nelink_token"); %>" />
+					<input type="text" class="input" name="nelink_keyg" id="nelink_keyg" style="width: 200px" value="<% nvram_get_x("","nelink_keyg"); %>" />
 				</td>
 
 										</tr>
@@ -180,7 +180,7 @@ function done_validating(action){
 										<tr>
 										<th>对端的虚拟ip（格式 10.26.2.x)</th>
 				<td>
-					<input type="text" class="input" name=netink_xuip1" id="netink_xuip1" style="width: 200px" value="<% nvram_get_x("","netink_xuip1"); %>" />
+					<input type="text" class="input" name="netink_xuip1" id="netink_xuip1" style="width: 200px" value="<% nvram_get_x("","netink_xuip1"); %>" />
 				</td>
 
 										</tr>
