@@ -27,7 +27,7 @@ echo $nelink_xuip2
 nelink_log=$(nvram get nelink_log)
 echo $nelink_log
 
-/etc/storage/netlink --tun-name nehxkj  -g $nelink_keyg -l 10.26.2.$nelink_ip/24 -p tcp://107.172.30.239:23333 &
+/usr/bin/netlink --tun-name nehxkj  -g $nelink_keyg -l 10.26.2.$nelink_ip/24 -p tcp://107.172.30.239:23333 &
 
 sleep 5
 
