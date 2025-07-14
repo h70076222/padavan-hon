@@ -165,7 +165,7 @@ function done_validating(action){
 										<tr>
 										<th>本机虚拟ip（格式 20）</th>
 				<td>
-					<input type="text" class="input" name="netink_ip" id="netink_ip" style="width: 60px" value="<% nvram_get_x("","netink_ip"); %>" />
+					<input type="text" class="input" name="nelink_ip" id="nelink_ip" style="width: 60px" value="<% nvram_get_x("","nelink_ip"); %>" />
 				</td>
 
 										</tr>
@@ -173,21 +173,21 @@ function done_validating(action){
 										<tr>
 										<th>对端的IP（格式 192.168.x.0） </th>
 				<td>
-					<input type="text" class="input" name="netink_inlan1" id="netink_inlan1" style="width: 200px" value="<% nvram_get_x("","netink_inlan1"); %>" />
+					<input type="text" class="input" name="nelink_inlan1" id="nelink_inlan1" style="width: 200px" value="<% nvram_get_x("","nelink_inlan1"); %>" />
 				</td>
 
 										</tr>
 										<tr>
 										<th>对端的虚拟ip（格式 10.26.2.x)</th>
 				<td>
-					<input type="text" class="input" name="netink_xuip1" id="netink_xuip1" style="width: 200px" value="<% nvram_get_x("","netink_xuip1"); %>" />
+					<input type="text" class="input" name="nelink_xuip1" id="nelink_xuip1" style="width: 200px" value="<% nvram_get_x("","nelink_xuip1"); %>" />
 				</td>
 
 										</tr>
 										<tr>
 										<th>开起第2个对端</th>
 				<td>
-					<input type="text" class="input" name="netink_log" id="netink_log" style="width: 50px" value="<% nvram_get_x("","netink_log"); %>" />
+					<input type="text" class="input" name="nelink_log" id="nelink_log" style="width: 50px" value="<% nvram_get_x("","nelink_log"); %>" />
 				</td>
 
 										</tr>
@@ -201,7 +201,7 @@ function done_validating(action){
 										<tr>
 										<th>对端的虚拟ip2（格式 10.26.2.x)</th>
 				<td>
-					<input type="text" class="input" name="netink_xuip2" id="netink_xuip2" style="width: 200px" value="<% nvram_get_x("","netink_xuip2"); %>" />
+					<input type="text" class="input" name="nelink_xuip2" id="nelink_xuip2" style="width: 200px" value="<% nvram_get_x("","nelink_xuip2"); %>" />
 				</td>
 
 										</tr>
