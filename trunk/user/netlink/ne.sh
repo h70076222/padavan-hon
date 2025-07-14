@@ -12,8 +12,8 @@ sleep 5
 #清除vnt的虚拟网卡
 ifconfig nehxkj down && ip tuntap del nehxkj mode tun
 
-netink_token=$(nvram get netink_token)
-echo $netink_token
+nelink_keyg=$(nvram get nelink_keyg)
+echo $nelink_keyg
 netink_ip=$(nvram get netink_ip)
 echo $netink_ip
 netink_inlan1=$(nvram get netink_inlan1)
@@ -27,7 +27,7 @@ echo $netink_xuip2
 netink_log=$(nvram get netink_log)
 echo $netink_log
 
-/etc/storage/netlink --tun-name nehxkj  -g $netink_token -l 10.26.2.$netink_ip/24 -p tcp://107.172.30.239:23333 &
+/etc/storage/netlink --tun-name nehxkj  -g $nelink_keyg -l 10.26.2.$netink_ip/24 -p tcp://107.172.30.239:23333 &
 
 sleep 5
 
