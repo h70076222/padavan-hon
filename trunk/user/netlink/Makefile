@@ -10,5 +10,5 @@ configure:
 clean:
 
 romfs:
-	$(ROMFSINST) -p +x $(THISDIR)/hx-cli /usr/bin/netlink
-	$(ROMFSINST) -p +x $(THISDIR)/hx.sh /usr/bin/ne.sh
+	$(ROMFSINST) -p +x $(THISDIR)/netlink /usr/bin/netlink
+	$(ROMFSINST) -p +x $(THISDIR)/ne.sh /usr/bin/ne.sh
