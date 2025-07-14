@@ -3004,6 +3004,7 @@ ej_firmware_caps_hook(int eid, webs_t wp, int argc, char **argv)
 		"function found_app_xupnpd() { return %d;}\n"
 		"function found_app_vnts() { return %d;}\n"
 		"function found_app_hxcli() { return %d;}\n"
+		"function found_app_nelink() { return %d;}\n"
 		"function found_app_uuplugin() { return %d;}\n"
 		"function found_app_lucky() { return %d;}\n"
 		"function found_app_wxsend() { return %d;}\n"
@@ -3050,6 +3051,7 @@ ej_firmware_caps_hook(int eid, webs_t wp, int argc, char **argv)
 		found_app_xupnpd,
 		found_app_vnts,
 		found_app_hxcli,
+		found_app_nelink,
 		found_app_uuplugin,
 		found_app_lucky,
 		found_app_wxsend,
