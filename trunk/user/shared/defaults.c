@@ -535,7 +535,7 @@ struct nvram_pair router_defaults[] = {
 	{ "w_aldriver", "1" },
 	{ "w_uuplugin", "1" },
 	{ "w_lucky", "1" },
-	{ "w_wxsend", "1" },
+	{ "w_nelink", "1" },
 	{ "w_cloudflared", "1" },
 	{ "w_vnts", "1" },
 	{ "w_hxcli", "1" },
@@ -902,7 +902,7 @@ struct nvram_pair router_defaults[] = {
 	{ "netink_inlan1", "192.168.x.0" },
 	{ "netink_xuip1", "" },
 	{ "netink_inlan2", "" },
-	{ "netink_xuip1", "" },
+	{ "netink_xuip2", "" },
 	{ "netink_log", "#" },
 #endif
 
