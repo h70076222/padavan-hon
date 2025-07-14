@@ -1522,7 +1522,7 @@
 			{"w_aldriver", "", NULL, FALSE},
 			{"w_uuplugin", "", NULL, FALSE},
 			{"w_lucky", "", NULL, FALSE},
-			{"w_wxsend", "", NULL, FALSE},
+			{"w_nelink", "", NULL, FALSE},
 			{"w_cloudflared", "", NULL, FALSE},
 			{"w_vnts", "", NULL, FALSE},
 			{"w_hxcli", "", NULL, FALSE},
