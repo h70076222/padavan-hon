@@ -193,7 +193,7 @@ function done_validating(action){
 										<tr>
 										<th>开起第2个对端</th>
 				<td>
-					<input type="text" class="input" name=$netink_log" id="$netink_log" style="width: 50px" value="<% nvram_get_x("","$netink_log"); %>" />
+					<input type="text" class="input" name="netink_log" id="netink_log" style="width: 50px" value="<% nvram_get_x("","netink_log"); %>" />
 				</td>
 
 										</tr>
@@ -207,7 +207,7 @@ function done_validating(action){
 										<tr>
 										<th>对端的虚拟ip2（格式 10.26.2.x)</th>
 				<td>
-					<input type="text" class="input" name=netink_xuip2" id="netink_xuip2" style="width: 200px" value="<% nvram_get_x("","netink_xuip2"); %>" />
+					<input type="text" class="input" name="netink_xuip2" id="netink_xuip2" style="width: 200px" value="<% nvram_get_x("","netink_xuip2"); %>" />
 				</td>
 
 										</tr>
