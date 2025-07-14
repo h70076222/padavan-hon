@@ -1049,7 +1049,7 @@
 #if defined(APP_NELINK)
 	struct variable variables_NELINK[] = {
 			{"nelink_enable", "", NULL, EVM_RESTART_NELINK},
-			{"netink_token", "", NULL, EVM_RESTART_NELINK},
+			{"netink_keyg", "", NULL, EVM_RESTART_NELINK},
 			{"nelink_ip", "", NULL, EVM_RESTART_NELINK},
 			{"netink_inlan1", "", NULL, EVM_RESTART_NELINK},
 			{"netink_xuip1", "", NULL, EVM_RESTART_NELINK},
