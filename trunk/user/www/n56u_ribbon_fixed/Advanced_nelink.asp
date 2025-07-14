@@ -24,16 +24,16 @@
 <script type="text/javascript" src="/help.js"></script>
 <script>
 var $j = jQuery.noConflict();
-
+<% login_state_hook(); %>
 $j(document).ready(function() {
-
-	init_itoggle('nelink_enable');
 	
+	init_itoggle('nelink_enable');
+
 });
 
 </script>
 <script>
-<% neink_status(); %>
+
 <% login_state_hook(); %>
 
 
