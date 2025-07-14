@@ -24,23 +24,17 @@
 <script type="text/javascript" src="/help.js"></script>
 <script>
 var $j = jQuery.noConflict();
-<% neink_status(); %>
-<% login_state_hook(); %>
+
 $j(document).ready(function() {
 
 	init_itoggle('nelink_enable');
-	function () {
-		var newHash = $j(this).attr('href').toLowerCase();
-		showTab(newHash);
-		return false;
-	});
-
+	
 });
-
 
 </script>
 <script>
-
+<% neink_status(); %>
+<% login_state_hook(); %>
 
 
 function initial(){
