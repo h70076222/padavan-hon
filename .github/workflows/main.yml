@@ -1,4 +1,4 @@
-name: ZN8800N
+name: GHL
 on: 
   #release:
   #  types: [published]
@@ -37,7 +37,7 @@ jobs:
   
     - name: Build Firmware
       env:
-        TNAME: ZN8800N
+        TNAME: GHL
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
