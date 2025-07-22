@@ -1,4 +1,4 @@
-name: ZN8800N
+name: ZTE_E8820S
 on: 
   #release:
   #  types: [published]
@@ -37,7 +37,7 @@ jobs:
   
     - name: Build Firmware
       env:
-        TNAME: ZN8800N
+        TNAME: ZTE_E8820S
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
