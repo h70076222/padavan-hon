@@ -1,7 +1,7 @@
 /* HXZN 880N */
 
-#define BOARD_PID		"ZN880N"
-#define BOARD_NAME		"ZN880N"
+#define BOARD_PID		"ZN8800N"
+#define BOARD_NAME		"ZN8800N"
 #define BOARD_DESC		"HXZN 8800N Wireless Router"
 #define BOARD_VENDOR_NAME	"HXZN Corporation"
 #define BOARD_VENDOR_URL	"http://www.ztehome.com.cn/"
